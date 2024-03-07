@@ -1,6 +1,6 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos:<a href="[01-Documentação de Contexto.md]"> Documentação de Contexto</a></span>
+<span style="color:red">Pré-requisitos:<a href="01-Documentação de Contexto.md"> Documentação de Contexto</a></span>
 
 O aplicativo será desenvolvido como um aplicativo móvel utilizando o framework React Native, permitindo a compatibilidade com dispositivos iOS e Android. O uso de React Native garantirá uma experiência de usuário consistente e fluída em diferentes dispositivos móveis.
 O aplicativo será composto por diversos módulos principais:
