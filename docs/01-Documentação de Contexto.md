@@ -1,46 +1,43 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Com o avanço tecnológico e a popularização da impressão 3D, surgem novas oportunidades e desafios para os entusiastas e profissionais dessa área. No entanto, um dos desafios enfrentados pelos usuários de impressão 3D é a dificuldade em calcular com precisão os custos de produção, retorno de investimento e valores de venda das peças impressas. Esses cálculos são essenciais para garantir a viabilidade econômica dos projetos e maximizar a lucratividade.
+
+O mercado carece de ferramentas eficientes e acessíveis que auxiliem os usuários nesses cálculos complexos. Muitas vezes, os métodos de cálculo manual são imprecisos e consomem tempo, enquanto as soluções disponíveis no mercado podem ser caras e pouco adaptadas às necessidades específicas dos usuários.
+
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
-
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Para resolver esse problema, propomos o desenvolvimento de um aplicativo móvel que simplifica e automatiza o processo de cálculo dos custos de produção, retorno de investimento e valores de venda de peças impressas em 3D. Este aplicativo fornecerá uma solução abrangente e intuitiva, permitindo que os usuários tomem decisões informadas e maximizem sua lucratividade no emocionante mundo da impressão 3D..
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+O principal objetivo deste projeto é desenvolver um aplicativo móvel que auxilie os usuários na gestão financeira de seus projetos de impressão 3D, fornecendo ferramentas para calcular com precisão os custos de produção, retorno de investimento e valores de venda das peças impressas.
+Como objetivos específicos, podemos ressaltar:
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+•	Desenvolver um aplicativo móvel utilizando React Native para calcular os custos de produção, retorno de investimento e valores de venda de peças impressas em 3D.
+
+•	Implementar um sistema de cadastro de usuários para fornecer uma experiência personalizada e segura.
+
+
+•	Facilitar o acesso e a entrada de dados necessários para os cálculos, proporcionando uma interface intuitiva e amigável adaptada a dispositivos móveis.
+
+•	Fornecer resultados precisos e detalhados para ajudar os usuários a tomar decisões informadas sobre seus projetos de impressão 3D.
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Com a popularização da impressão 3D, é essencial fornecer ferramentas que auxiliem os usuários a gerenciar seus projetos de forma eficiente e lucrativa. Este aplicativo visa preencher uma lacuna no mercado, fornecendo uma solução abrangente e acessível para calcular os custos e retornos associados à impressão 3D. Ao fornecer resultados precisos e detalhados, o aplicativo ajudará os usuários a maximizar sua lucratividade e tomar decisões mais informadas sobre seus projetos.
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+O público-alvo deste aplicativo móvel é composto por uma ampla gama de usuários envolvidos no mundo da impressão 3D, incluindo:
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
+Entusiastas da Impressão 3D: Amadores e hobbyistas que utilizam impressoras 3D para criar projetos pessoais e experimentais, como prototipagem rápida, modelagem de peças personalizadas e artesanato.
 
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+Profissionais e Empreendedores: Profissionais e empreendedores que utilizam a impressão 3D em seus negócios, como designers industriais, arquitetos, engenheiros, joalheiros, fabricantes e proprietários de pequenas empresas.
+
+Estudantes e Educadores: Estudantes de design, engenharia e áreas relacionadas, bem como educadores que utilizam a impressão 3D como ferramenta educacional em escolas, universidades e centros de formação profissional.
+
+Empresas de Serviços de Impressão 3D: Empresas que oferecem serviços de impressão 3D sob demanda para clientes em diversas indústrias, incluindo prototipagem, fabricação personalizada, arquitetura, medicina, moda e design de produto.
+
+Hobbistas e DIYers: Aficionados por projetos de bricolagem e DIY (faça você mesmo) que utilizam a impressão 3D como parte de seus hobbies e projetos de artesanato em casa.
+
+Este público-alvo é diversificado em termos de habilidades, conhecimentos e necessidades, mas compartilha o interesse comum na impressão 3D e na busca por ferramentas que facilitem a gestão financeira de seus projetos.
