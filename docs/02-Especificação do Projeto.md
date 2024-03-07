@@ -2,9 +2,23 @@
 
 <span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
+O aplicativo será desenvolvido como um aplicativo móvel utilizando o framework React Native, permitindo a compatibilidade com dispositivos iOS e Android. O uso de React Native garantirá uma experiência de usuário consistente e fluída em diferentes dispositivos móveis.
+O aplicativo será composto por diversos módulos principais:
 
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+•	Cadastro de Usuários: Os usuários poderão se cadastrar no aplicativo para acessar todas as funcionalidades oferecidas.
+•	Cálculo Simples: Este módulo permitirá aos usuários inserir os valores disponibilizados pelo fatiador, como comprimento utilizado, área do diâmetro do filamento, diâmetro do filamento, peso estimado e tempo de impressão.
+
+•	Valores de Produção: Aqui, os usuários poderão inserir as despesas de produção, como o tipo de filamento, valor do quilo, preço por kWh, consumo da máquina, depreciação por hora e média de falhas.
+
+•	Retorno de Investimento: Este módulo calculará o tempo necessário para o retorno do investimento com base no valor da máquina, horas de operação diárias, dias de operação por mês e valor a ser adicionado por hora.
+
+•	Custos de Produção: Neste módulo, serão calculados os custos de material, energia, manutenção, falhas, acabamento e fixação (spray).
+
+•	Custos Diversos: Aqui, serão calculados os custos diversos, incluindo o retorno de investimento e outros custos adicionais.
+
+•	Resultado: Por fim, o módulo de resultado apresentará o valor de produção, a porcentagem de lucro, o valor de venda sugerido e a margem de lucro.
+
+Este projeto será desenvolvido com foco na usabilidade, precisão e eficiência, visando proporcionar uma ferramenta completa e indispensável para usuários envolvidos no mundo da impressão 3D.
 
 ## Personas
 
