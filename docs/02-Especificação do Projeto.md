@@ -1,6 +1,6 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="[1-Documentação de Contexto.md](https://github.com/ICEI-PUC-Minas-PMV-ADS/ads-2024-1-e3-proj-mov-t8-pmv-ads-2024-1-e3-proj-printpro-wizard/blob/main/docs/01-Documenta%C3%A7%C3%A3o%20de%20Contexto.md)"> Documentação de Contexto</a></span>
+<span style="color:red">Pré-requisitos: <a href="(https://github.com/ICEI-PUC-Minas-PMV-ADS/ads-2024-1-e3-proj-mov-t8-pmv-ads-2024-1-e3-proj-printpro-wizard/blob/main/docs/01-Documenta%C3%A7%C3%A3o%20de%20Contexto.md)"> Documentação de Contexto</a></span>
 
 O aplicativo será desenvolvido como um aplicativo móvel utilizando o framework React Native, permitindo a compatibilidade com dispositivos iOS e Android. O uso de React Native garantirá uma experiência de usuário consistente e fluída em diferentes dispositivos móveis.
 O aplicativo será composto por diversos módulos principais:
