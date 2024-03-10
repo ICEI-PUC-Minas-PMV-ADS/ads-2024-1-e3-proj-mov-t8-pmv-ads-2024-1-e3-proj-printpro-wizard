@@ -37,6 +37,42 @@ Lucas é um empreendedor que está começando um pequeno negócio de produtos pe
 Lucas possui habilidades básicas de design e impressão 3D, mas está aprendendo rapidamente. Ele está sempre em busca de orientação e recursos para aprimorar suas habilidades e expandir seu negócio.
 Ele busca um aplicativo intuitivo e fácil de usar que forneça uma visão abrangente dos custos envolvidos na produção de seus produtos. Ele valoriza recursos educacionais e suporte ao cliente para ajudá-lo a resolver desafios específicos relacionados à impressão 3D e ao gerenciamento de custos.
 
+## Requisitos
+
+As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
+
+### Requisitos Funcionais
+
+|ID    | Descrição do Requisito  | Prioridade |
+|------|-----------------------------------------|----|
+|RF-001| Cadastro de Usuários | ALTA | 
+|RF-002| Cálculo de Custos de Produção | ALTA |
+|RF-003| Cálculo de Retorno de Investimento(ROI) | ALTA |
+|RF-004| Cálculo de Valores de Venda | ALTA |
+|RF-005| Interface Intuitiva | MEDIO |
+
+
+### Requisitos não Funcionais
+
+|ID     | Descrição do Requisito  |Prioridade |
+|-------|-------------------------|----|
+|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
+|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+
+Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
+
+- [Requisitos Funcionais
+ (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
+ correspondem a uma funcionalidade que deve estar presente na
+  plataforma (ex: cadastro de usuário).
+- [Requisitos Não Funcionais
+  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
+  correspondem a uma característica técnica, seja de usabilidade,
+  desempenho, confiabilidade, segurança ou outro (ex: suporte a
+  dispositivos iOS e Android).
+Lembre-se que cada requisito deve corresponder à uma e somente uma
+característica alvo da sua solução. Além disso, certifique-se de que
+todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 ## Histórias de Usuários
 
@@ -79,38 +115,6 @@ Usar o seguinte modelo:
 ![Indicadores de Desempenho](img/02-indic-desemp.png)
 Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
 
-## Requisitos
-
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
-
-### Requisitos Funcionais
-
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
-
-### Requisitos não Funcionais
-
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 ## Restrições
 
