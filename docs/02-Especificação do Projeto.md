@@ -56,8 +56,11 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-001| Segurança | ALTA | 
+|RNF-002| Desempenho |  MÉDIA | 
+|RNF-003| Compatibilidade |  MÉDIA | 
+|RNF-004| Disponibilidade |  MÉDIA | 
+|RNF-005| Precisão dos Cálculos |  ALTA |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
