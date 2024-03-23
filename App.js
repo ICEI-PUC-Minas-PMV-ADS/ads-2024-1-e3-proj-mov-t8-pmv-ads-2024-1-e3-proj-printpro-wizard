@@ -1,20 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {View, Text} from 'react-native';
 
-export default function App() {
+import PagRetorno from './src/pages/PagRetorno';
+
+const App = () => 
+{
   return (
-    <View style={styles.container}>
-      <Text>VAI TOMAR NO CU</Text>
-      <StatusBar style="auto" />
-    </View>
+
+    <PagRetorno />
+
   );
+
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
