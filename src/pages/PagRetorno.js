@@ -6,7 +6,7 @@ const PagRetorno = () => {
 
     <View> 
     
-      <Text> Retorno de Investimento </Text>
+      <Text>                                        Retorno de Investimento </Text>
     
     </View>
 
