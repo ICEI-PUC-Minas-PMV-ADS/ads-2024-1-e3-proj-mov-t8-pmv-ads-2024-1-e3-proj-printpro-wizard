@@ -1,16 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-
-
-import PagRetorno from './src/pages/PagRetorno';
-
-import Footer from "./src/components/Footer"
-import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+import Footer from './src/pages/Footer/index';
 
 export default function App() {
   return (
-    <View>
-      <Footer/>
+    <View style={{ flex: 1 }}>
+      <Footer />
     </View>
   );
 }
