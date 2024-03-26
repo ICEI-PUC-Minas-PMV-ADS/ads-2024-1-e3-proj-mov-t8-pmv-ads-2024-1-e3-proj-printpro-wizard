@@ -1,16 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View } from 'react-native';
+import Footer from './src/pages/Footer/index';
 
-import PagRetorno from './src/pages/PagRetorno';
-
-const App = () => 
-{
+export default function App() {
   return (
-
-    <PagRetorno />
-
+    <View style={{ flex: 1 }}>
+      <Footer />
+    </View>
   );
-
 }
-
-export default App;

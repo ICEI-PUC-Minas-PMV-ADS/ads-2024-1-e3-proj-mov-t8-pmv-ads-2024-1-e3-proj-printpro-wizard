@@ -1,12 +1,17 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+/*import React from "react";
+import { View, Image } from 'react-native';
+
+import Footer from './Footer'
 
 const PagRetorno = () => {
   return (
 
-    <View> 
+    <View style= {{flex:1, alignItems:'center', justifyContent:'top', top:50}}> 
     
-      <Text>                                        Retorno de Investimento </Text>
+      <Text>Retorno de Investimeno</Text>
+      
+      <Footer/> 
+    
     
     </View>
 
@@ -14,4 +19,4 @@ const PagRetorno = () => {
 
 }
 
-export default PagRetorno;
+export default PagRetorno; */
