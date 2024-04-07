@@ -3,7 +3,7 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
 
-Buscamos saciar a carência de uma ferramenta que que calcula uma necessidade de um determinado nicho. Criando um aplicativo com código base em React Native focado somente em client-side. Utilizado o visual studio code para estruturar o código e implementar os requisitos da aplicação.
+Buscamos saciar a carência de uma ferramenta que que calcula uma necessidade de um determinado nicho, assim buscando uma maior facilidade para aqueles que trabalham com impressoras 3d. Criando um aplicativo com código base em React Native focado somente em client-side. Utilizado o visual studio code para estruturar o código e implementar os requisitos da aplicação.
 
 ## Relação de Ambientes de Trabalho
 
