@@ -9,8 +9,7 @@ import Resultados from './src/pages/Resultados';
 export default function App() {
   return (
     <View style={{ flex: 1 }}>
-      <PagRetorno />
-      <Footer />
+      <Resultados/>
     </View>
   );
 }
