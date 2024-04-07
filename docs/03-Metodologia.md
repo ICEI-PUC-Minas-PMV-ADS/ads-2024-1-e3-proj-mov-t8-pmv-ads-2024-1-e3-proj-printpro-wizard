@@ -51,7 +51,7 @@ Foi utilizado o método de Scrum junto com o Trello para o gerencimaneto do proj
 
 As ferramentas empregadas no projeto são:
 
-- Visual Studio Code para implemntação de código e estrural;
+- Visual Studio Code para implementação de código e estrural;
 - Discord e Microsoft Teams para ccomunicação com os colaboradores;
 - Figma para desing das telas;
 - Trello para formaliza necessidades e trabalhos.
