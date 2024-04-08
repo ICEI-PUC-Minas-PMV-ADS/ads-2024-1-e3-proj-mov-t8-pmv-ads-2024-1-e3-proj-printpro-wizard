@@ -8,7 +8,7 @@ const Orcamento = () => {
 
     <View style= {{flex:1, alignItems:'center'}}> 
     
-      <Text>Orçamento</Text>
+      <Text>Orçamento-DavidsonMarques</Text>
       
       <Footer/> 
     
