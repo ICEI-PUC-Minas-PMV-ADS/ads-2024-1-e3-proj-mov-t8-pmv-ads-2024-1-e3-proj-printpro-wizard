@@ -101,20 +101,20 @@ Nossa proposta é bem clara, buscamos possibilitar a todos ter ciência sobre os
 
 Temos como meta criar uma padronização para esses dados sensíveis, criando assim uma padronização com templates de modelos de impressoras, gastos por empresas de energia, ou padrão de materiais baseados em banco de dados de lojas afiliadas. O proceso inicial demanda que o usuário tenha conhecimento sobre seus gastos em materiais, gasto de energia por hora de sua impressora e quanto é cobrado o kWs pela empresa de energia responável por sua residência.
 
-![Processo 1](img/02-bpmn-proc1.png)
+![Processo 1](img/DADOS-USUÁRIO.png)
 
 ### Processo 2 – INPUT DE DADOS E ALTERAÇÃO DE DADOS
 
 Buscar uma forma de auto completar os dados do usuário, com base em outros dados fornecidos consientemente por outros usuários, assim buscando agilizar o trabalho manual. O processo é necessário, seria ele o que faz o aplicativo funcionar da forma que deveria é possível tambem alterar esses dados a qualquyer momento, assim buscando diferentes resultados.
 
 
-![Processo 2](img/02-bpmn-proc2.png)
+![Processo 2](img/INPUT-REVISAO-DADOS.png)
 
 ### Processo 3 – RESULTADOS
 
 Solicitar ao usuário que compartilhasse os resultados e dados para que possamos melhorar nossa tecnologia. Mostra o resultados dos dados inseridos anteriormente.
 
-![Processo 2](img/02-bpmn-proc2.png)
+![Processo 2](img/RESULTADOS.png)
 
 
 ## Indicadores de Desempenho
