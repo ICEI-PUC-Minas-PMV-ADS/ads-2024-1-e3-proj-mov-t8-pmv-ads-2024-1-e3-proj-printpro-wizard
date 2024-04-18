@@ -107,7 +107,6 @@ Temos como meta criar uma padronização para esses dados sensíveis, criando as
 
 Buscar uma forma de auto completar os dados do usuário, com base em outros dados fornecidos consientemente por outros usuários, assim buscando agilizar o trabalho manual. O processo é necessário, seria ele o que faz o aplicativo funcionar da forma que deveria é possível tambem alterar esses dados a qualquyer momento, assim buscando diferentes resultados.
 
-
 ![Processo 2](img/INPUT-REVISAO-DADOS.png)
 
 ### Processo 3 – RESULTADOS
@@ -116,16 +115,14 @@ Solicitar ao usuário que compartilhasse os resultados e dados para que possamos
 
 ![Processo 2](img/RESULTADOS.png)
 
-
 ## Indicadores de Desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
+Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores.
 
-Usar o seguinte modelo: 
+Usar o seguinte modelo:
 
 ![Indicadores de Desempenho](img/02-indic-desemp.png)
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
-
+Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori.
 
 ## Restrições
 
