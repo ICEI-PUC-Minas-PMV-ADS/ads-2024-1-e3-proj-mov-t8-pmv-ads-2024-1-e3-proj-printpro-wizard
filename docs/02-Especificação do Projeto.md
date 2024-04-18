@@ -91,23 +91,31 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+Com a popularização da impressora 3d muitos entusiastas começaram a comprar a sua própria, deixando assim de ser um produto voltado aos distribuidores e empresas á algo que possa ser usado por qualquer pessoa. Mesmo sendo para uso pessoal há a necessidade de calcular gastos, sejam eles com materiais ou energia no geral. Por ser um mercado relativamente novo, não existe aplicativos intuitivos ao público-geral que possam auxiliar aqueles com carência de conhecimento nesses calculos que demandão conhecimento mais aprofundado. Nosso aplicativo foca em ajudar a todos nesse meio, possibilitando praticidade e o principal de tudo, cálculos precisos e corretos.
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+Nossa proposta é bem clara, buscamos possibilitar a todos ter ciência sobre os custos finais de cada produção de sua impressora 3d. Esse dados variam claramente de usuário para usuário que terá que manualmente inserir os dados de custos locais, como kiloWatts por hora (energia), valor do material e dados gerais de custos do modelo de sua impressora.
 
-### Processo 1 – NOME DO PROCESSO
+### Processo 1 – COLETANEA DE DADOS LOCAIS DO USUÁRIO
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
+Temos como meta criar uma padronização para esses dados sensíveis, criando assim uma padronização com templates de modelos de impressoras, gastos por empresas de energia, ou padrão de materiais baseados em banco de dados de lojas afiliadas. O proceso inicial demanda que o usuário tenha conhecimento sobre seus gastos em materiais, gasto de energia por hora de sua impressora e quanto é cobrado o kWs pela empresa de energia responável por sua residência.
 
 ![Processo 1](img/02-bpmn-proc1.png)
 
-### Processo 2 – NOME DO PROCESSO
+### Processo 2 – INPUT DE DADOS E ALTERAÇÃO DE DADOS
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
+Buscar uma forma de auto completar os dados do usuário, com base em outros dados fornecidos consientemente por outros usuários, assim buscando agilizar o trabalho manual. O processo é necessário, seria ele o que faz o aplicativo funcionar da forma que deveria é possível tambem alterar esses dados a qualquyer momento, assim buscando diferentes resultados.
+
 
 ![Processo 2](img/02-bpmn-proc2.png)
+
+### Processo 3 – RESULTADOS
+
+Solicitar ao usuário que compartilhasse os resultados e dados para que possamos melhorar nossa tecnologia. Mostra o resultados dos dados inseridos anteriormente.
+
+![Processo 2](img/02-bpmn-proc2.png)
+
 
 ## Indicadores de Desempenho
 
