@@ -16,7 +16,7 @@ export default function Footer(props) {
     };
 
     const goToProductionCostPage = () => {
-         /* Adicione a pagina aqui */
+        navigation.navigate('Custo')
     };
 
     const goToInvestmentReturnPage = () => {
