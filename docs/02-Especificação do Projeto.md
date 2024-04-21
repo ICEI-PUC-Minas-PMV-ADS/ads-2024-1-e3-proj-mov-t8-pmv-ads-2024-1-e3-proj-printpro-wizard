@@ -43,39 +43,24 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Cadastro de Usuários | ALTA | 
-|RF-002| Cálculo de Custos de Produção | ALTA |
-|RF-003| Cálculo de Retorno de Investimento(ROI) | ALTA |
-|RF-004| Cálculo de Valores de Venda | ALTA |
-|RF-005| Interface Intuitiva | MEDIO |
+| ID     | Descrição do Requisito  | Prioridade |
+|--------|-----------------------------------------|----|
+| RF - 001 | Cadastro de Usuários: Permitir registro com nome, e-mail e senha. | ALTA | 
+| RF-002 | Cálculo de Custos de Produção:Permitir inserção de custos de materiais, energia, mão de obra, etc. Opções de moedas e unidades. | ALTA |
+| RF-003 | Cálculo de Retorno de Investimento (ROI): Inserir custo inicial e recorrente para calcular tempo de retorno. Considerar depreciação e desgaste dos equipamentos. | ALTA |
+| RF-004 | Cálculo de Valores de Venda: Permitir determinação de preços com base em custos e ROI. Fornecer orientações sobre preços competitivos. | ALTA |
+| RF-005 | Interface Intuitiva: Interface amigável e adaptada para dispositivos móveis. Facilidade de navegação e entrada de dados. | MEDIO |
 
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
+|ID     | Descrição do Requisito  | Prioridade |
 |-------|-------------------------|----|
-|RNF-001| Segurança | ALTA | 
-|RNF-002| Desempenho |  MÉDIA | 
-|RNF-003| Compatibilidade |  MÉDIA | 
-|RNF-004| Disponibilidade |  MÉDIA | 
-|RNF-005| Precisão dos Cálculos |  ALTA |
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+|RNF-001| Segurança: Garantir segurança de dados com criptografia e autenticação. Conformidade com regulamentações de privacidade. | ALTA | 
+|RNF-002| Desempenho: Responsividade rápida, com carregamento mínimo. Capacidade de lidar com carga de usuários sem degradação significativa. |  MÉDIA | 
+|RNF-003| Compatibilidade: Compatibilidade com diferentes dispositivos e sistemas operacionais. Testes em várias resoluções para experiência consistente. |  MÉDIA | 
+|RNF-004| Disponibilidade: Acesso contínuo, com tempo de inatividade mínimo. |  MÉDIA | 
+|RNF-005| Precisão dos Cálculos: Garantir precisão e confiabilidade nos resultados. |  ALTA |
 
 ## Histórias de Usuários
 
