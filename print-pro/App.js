@@ -16,6 +16,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Resultados" component={Resultados} />
         <Stack.Screen name="CalcDetalhado" component={CalcDetalhado} />
+        <Stack.Screen name="PagRetorno" component={PagRetorno} />
 
       </Stack.Navigator>
       <Footer />

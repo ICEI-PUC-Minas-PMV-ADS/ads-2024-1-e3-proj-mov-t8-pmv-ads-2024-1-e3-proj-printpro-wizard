@@ -20,7 +20,7 @@ export default function Footer(props) {
     };
 
     const goToInvestmentReturnPage = () => {
-        
+        navigation.navigate('PagRetorno')
     };
 
     const goToProfilePage = () => {
