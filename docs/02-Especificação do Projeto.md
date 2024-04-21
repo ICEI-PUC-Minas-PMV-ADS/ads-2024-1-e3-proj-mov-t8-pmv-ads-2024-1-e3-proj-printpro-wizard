@@ -136,16 +136,15 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Matriz de Rastreabilidade
 
-A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
+| Requisitos                          | Cadastro de Usuários | Cálculo de Custos de Custo | Cálculo de ROI | Cálculo de Valores de Venda | Interface Intuitiva |
+|-------------------------------------|-----------------------|---------------------------------|------------------|------------------------------|---------------------|
+| RF-001: Cadastro de Usuários       |          X            |   X                              |  X                |     X                         |         X            |
+| RF-002: Cálculo de Custos          |                       |                X                |         X         |               X               |                     |
+| RF-003: Cálculo de ROI             |                       |                 X                |         X        |                X              |                     |
+| RF-004: Cálculo de Valores de Venda |                       |               X                  |       X           |              X              |                     |
+| RF-005: Interface Intuitiva         |                       |                                 |                  |                              |         X         |
 
-A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema, conforme a figura meramente ilustrativa apresentada a seguir.
 
-![Exemplo de matriz de rastreabilidade](img/02-matriz-rastreabilidade.png)
-
-> **Links Úteis**:
-> - [Artigo Engenharia de Software 13 - Rastreabilidade](https://www.devmedia.com.br/artigo-engenharia-de-software-13-rastreabilidade/12822/)
-> - [Verificação da rastreabilidade de requisitos usando a integração do IBM Rational RequisitePro e do IBM ClearQuest Test Manager](https://developer.ibm.com/br/tutorials/requirementstraceabilityverificationusingrrpandcctm/)
-> - [IBM Engineering Lifecycle Optimization – Publishing](https://www.ibm.com/br-pt/products/engineering-lifecycle-optimization/publishing/)
 
 
 # Gerenciamento de Projeto
