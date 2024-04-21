@@ -169,11 +169,11 @@ O gerenciamento adequado de tarefas contribuirá para que o projeto alcance alto
 
 ## Gestão de Orçamento
 
-| Recursos                 | R$          |
-|--------------------------|-------------|
-| Tempo dos Alunos         | 0,00        |
-| Acesso a Tecnologia      | 0,00        |
-| Conhecimento dos Alunos  | 0,00        |
-| Supervisão dos Professores| 0,00       |
-| Feedback de Usuários     | 0,00        |
-| **TOTAL**                | **0,00**    |
+| Recursos                    |        R$         |
+|----------------------------------------------------------|-----------------------------------------------------|
+| Tempo dos Alunos            |       0,00        |
+| Acesso a Tecnologia         |       0,00        |
+| Conhecimento dos Alunos     |       0,00        |
+| Supervisão dos Professores  |       0,00        |
+| Feedback de Usuários        |       0,00        |
+| **TOTAL**                   |    **0,00**      |
