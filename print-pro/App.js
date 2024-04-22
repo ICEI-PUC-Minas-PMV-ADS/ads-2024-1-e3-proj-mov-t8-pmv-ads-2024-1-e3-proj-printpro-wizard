@@ -19,7 +19,7 @@ export default function App() {
         <Stack.Screen name="CalcDetalhado" component={CalcDetalhado} />
         <Stack.Screen name="PagRetorno" component={PagRetorno} />
         <Stack.Screen name="Custo" component={Custo} />
-     <Stack.Screen name="Orçamento" component={Orçamento} />
+        <Stack.Screen name="Orçamento" component={Orçamento} />
       </Stack.Navigator>
       <Footer />
     </NavigationContainer>
