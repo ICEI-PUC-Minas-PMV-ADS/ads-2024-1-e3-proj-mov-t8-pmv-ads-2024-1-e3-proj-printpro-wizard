@@ -24,7 +24,7 @@ export default function Footer(props) {
     };
 
     const goToProfilePage = () => {
-         
+        navigation.navigate('Orçamento');  
     };
 
     const resultIcon = active ? require('./icons8-dolar-64(1).png') : require('./icons8-dolar-64.png');
