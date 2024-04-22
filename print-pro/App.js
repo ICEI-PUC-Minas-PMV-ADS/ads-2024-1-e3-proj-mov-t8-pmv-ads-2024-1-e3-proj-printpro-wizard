@@ -7,7 +7,7 @@ import Resultados from './src/pages/Resultados';
 import PagRetorno from './src/pages/PagRetorno';
 import CalcDetalhado from './src/pages/CalcDetalhado';
 import Orcamento from './src/pages/Orcamento';
-import Custo from './src/pages/custo';
+import Custo from './src/pages/Custo';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,7 +19,7 @@ export default function App() {
         <Stack.Screen name="CalcDetalhado" component={CalcDetalhado} />
         <Stack.Screen name="PagRetorno" component={PagRetorno} />
         <Stack.Screen name="Custo" component={Custo} />
-        <Stack.Screen name="Orçamento" component={Orçamento} />
+        <Stack.Screen name="Orcamento" component={Orcamento} />
       </Stack.Navigator>
       <Footer />
     </NavigationContainer>

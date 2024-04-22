@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const Custo = () => {
   return (
     <View style={styles.container}> 
-      <Text style={styles.text}>custo</Text>
+      <Text style={styles.text}>Custo</Text>
     </View>
 
   );

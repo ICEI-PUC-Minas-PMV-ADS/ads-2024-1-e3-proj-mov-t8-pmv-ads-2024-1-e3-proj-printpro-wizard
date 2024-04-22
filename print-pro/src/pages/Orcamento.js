@@ -3,10 +3,10 @@ import { View, Text, StyleSheet } from 'react-native';
 
 
 
-const Orçamento = () => {
+const Orcamento = () => {
   return (
     <View style={styles.container}> 
-      <Text style={styles.text}>Orçamento</Text>
+      <Text style={styles.text}>Orcamento</Text>
 
     </View>
 
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Orçamento;
+export default Orcamento;
