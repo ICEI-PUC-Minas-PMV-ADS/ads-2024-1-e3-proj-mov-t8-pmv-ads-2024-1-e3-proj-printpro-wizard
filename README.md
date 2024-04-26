@@ -6,7 +6,7 @@
 
 `3#`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Um aplicativo móvel que visa simplificar o cálculo de custos e lucros na impressão 3D, visando atender uma ampla variedade de usuários, desde entusiastas a profissionais e empresas do setor.
 
 ## Integrantes
 
