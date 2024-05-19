@@ -12,16 +12,20 @@ import Custo from './src/pages/Custo';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  
+  
   return (
     <NavigationContainer>
+      
+      
       <Stack.Navigator>
+        <Stack.Screen name="Custo" component={Custo} />
         <Stack.Screen name="Resultados" component={Resultados} />
         <Stack.Screen name="CalcDetalhado" component={CalcDetalhado} />
         <Stack.Screen name="PagRetorno" component={PagRetorno} />
-        <Stack.Screen name="Custo" component={Custo} />
         <Stack.Screen name="Orcamento" component={Orcamento} />
-      </Stack.Navigator>
-      <Footer />
+      </Stack.Navigator>    sdsasds
+      
     </NavigationContainer>
   );
 }

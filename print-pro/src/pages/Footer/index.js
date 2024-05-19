@@ -27,28 +27,22 @@ export default function Footer(props) {
         navigation.navigate('Orçamento');  
     };
 
-    const resultIcon = active ? require('./icons8-dolar-64(1).png') : require('./icons8-dolar-64.png');
-    const calcDetailIcon = active ? require('./icons8-documento-50(1).png') : require('./icons8-documento-50.png');
-    const productionCostIcon = active ? require('./icons8-retorno-populacional-50(1).png') : require('./icons8-retorno-populacional-50.png');
-    const investmentReturnIcon = active ? require('./icons8-dinheiro-50(1).png') : require('./icons8-dinheiro-50.png');
-    const profileIcon = active ? require('./icons8-usuario-de-genero-neutro-50(1).png') : require('./icons8-usuario-de-genero-neutro-50.png');
-
     return (
         <View style={styles.footerContainer}>
             <TouchableOpacity onPress={goToResultsPage}>
-                <Image source={resultIcon}/>
+                <Image source={require("./icons8-dinheiro-50.png")}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={goToCalcDetailPage}>
-                <Image source={calcDetailIcon}/>
+                <Image source={require("./icons8-dinheiro-50.png")}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={goToProductionCostPage}>
-                <Image source={productionCostIcon}/>
+                <Image source={require("./icons8-dinheiro-50.png")}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={goToInvestmentReturnPage}>
-                <Image source={investmentReturnIcon}/>
+                <Image source={require("./icons8-dinheiro-50.png")}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={goToProfilePage}>
-                <Image source={profileIcon}/>
+                <Image source={require("./icons8-dinheiro-50.png")}/>
             </TouchableOpacity>
         </View>
     );

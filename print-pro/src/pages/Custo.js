@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, TextInput } from 'react-native';
+import Footer from './Footer/index';
 
 const Custo = () => {
 
@@ -30,7 +31,11 @@ const Custo = () => {
 
         <Text style={styles.text}>Custo de Fixação (spray)</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeFixation} value={fixation} style={styles.input}/>
+
       </View>
+
+      <Footer />
+
     </View>
 
   );
@@ -38,12 +43,14 @@ const Custo = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white'
+    backgroundColor: "white",
+    display: "flex",
+    justifyContent: "space-between",
+    height: "100%",
+    width: "100%",
   },
 
   textContainer: {
-    width: "100%",
-    height: "100%",
     display: "flex",
     alignItems: "center",
     marginTop: 25
