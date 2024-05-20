@@ -8,6 +8,7 @@ import PagRetorno from './src/pages/PagRetorno';
 import CalcDetalhado from './src/pages/CalcDetalhado';
 import Orcamento from './src/pages/Orcamento';
 import Custo from './src/pages/Custo';
+import Login from "./src/pages/Login"
 
 const Stack = createNativeStackNavigator();
 
@@ -15,17 +16,23 @@ export default function App() {
   
   
   return (
-    <NavigationContainer>
-      
+
+    <View>
+      <Login/>
+
+      {/* <NavigationContainer>
       
       <Stack.Navigator>
-        <Stack.Screen name="Custo" component={Custo} />
-        <Stack.Screen name="Resultados" component={Resultados} />
-        <Stack.Screen name="CalcDetalhado" component={CalcDetalhado} />
-        <Stack.Screen name="PagRetorno" component={PagRetorno} />
-        <Stack.Screen name="Orcamento" component={Orcamento} />
-      </Stack.Navigator>    sdsasds
+        <Stack.Screen name="Custo" component={Custo} options={{headerBackVisible: false, headerShown: false}}/>
+        <Stack.Screen name="Resultados" component={Resultados} options={{headerBackVisible: false}}/>
+        <Stack.Screen name="CalcDetalhado" component={CalcDetalhado} options={{headerBackVisible: false}}/>
+        <Stack.Screen name="PagRetorno" component={PagRetorno} options={{headerBackVisible: false}}/>
+        <Stack.Screen name="Orcamento" component={Orcamento} options={{headerBackVisible: false}}/>
+      </Stack.Navigator>
       
-    </NavigationContainer>
+    </NavigationContainer> */}
+    </View>
+
+    
   );
 }

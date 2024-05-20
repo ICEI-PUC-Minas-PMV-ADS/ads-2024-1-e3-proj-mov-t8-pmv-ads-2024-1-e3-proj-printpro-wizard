@@ -1,12 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet } from 'react-native';
-
+import Footer from './Footer/index';
 
 
 const PagRetorno = () => {
   return (
     <View style={styles.container}> 
       <Text style={styles.text}>Retorno de Investimeno</Text>
+      <Footer/>
     </View>
   );
 }

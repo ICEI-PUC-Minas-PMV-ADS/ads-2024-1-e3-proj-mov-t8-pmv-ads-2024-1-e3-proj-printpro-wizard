@@ -1,13 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet } from 'react-native';
-
+import Footer from './Footer/index';
 
 
 const Orcamento = () => {
   return (
     <View style={styles.container}> 
       <Text style={styles.text}>Orcamento</Text>
-
+      <Footer/>
     </View>
 
   );

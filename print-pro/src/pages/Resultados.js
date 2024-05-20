@@ -1,13 +1,14 @@
 import React from "react";
 import { View, Text, StyleSheet } from 'react-native';
-
+import Footer from './Footer/index';
 
 const Resultados = () => {
   return (
     <View style={styles.container}> 
       
       <Text style={styles.text}>Resultados</Text>      
-      
+      <Footer/>
+
     </View>
 
   );
