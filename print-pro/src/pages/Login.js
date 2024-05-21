@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Login() {
+    const [email, onChangeEmail] = useState("");
+    const [Password, onChangePassword] = useState("");
+    const navigation = useNavigation();
 
-    const [email, onChangeEmail] = useState("")
-    const [Password, onChangePassword] = useState("")
+    const handleCadastroNavigation = () => {
+        navigation.navigate('Cadastro');
+    };
 
-    return(
+    return (
         <View style={styles.all}>
-
             <View style={styles.titleContainer}>
                 <Text style={styles.titleText}>LOGIN</Text>
             </View>
@@ -16,30 +20,27 @@ export default function Login() {
             <View style={styles.containerInput}>
                 <View style={styles.containerForm}>
                     <Text style={styles.textInput}>EMAIL</Text>
-                    <TextInput style={styles.labelInput} keyboardType="default" onChangeText={onChangeEmail} value={email} styles={styles.input}/>
+                    <TextInput style={styles.labelInput} keyboardType="default" onChangeText={onChangeEmail} value={email} styles={styles.input} />
 
                     <Text style={styles.textInput}>SENHA</Text>
-                    <TextInput style={styles.labelInput} keyboardType="default" onChangeText={onChangePassword} value={Password} styles={styles.input} />
+                    <TextInput style={styles.labelInput} keyboardType="default" onChangeText={onChangePassword} value={Password} styles={styles.input} secureTextEntry={true} />
 
                     <Text style={styles.textEsqueci}>ESQUECI MINHA SENHA</Text>
-                    
-                    <TouchableOpacity style={styles.button} onPress={"hi"}>
+
+                    <TouchableOpacity style={styles.button} onPress={() => console.log("Login pressed")}>
                         <Text style={styles.buttonText}>ENTRAR</Text>
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.cadastreLabel}>
                     <Text style={styles.textCadastro}>Ainda não tem uma conta?</Text>
-                    <TouchableOpacity >
+                    <TouchableOpacity onPress={handleCadastroNavigation}>
                         <Text style={styles.textCadastroClick}>CADASTRE-SE AQUI</Text>
                     </TouchableOpacity>
-                </View>    
-                
-
+                </View>
             </View>
         </View>
-            
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
         color: "black",
         fontSize: 32,
         fontWeight: "bold",
-        letterSpacing: 4
+        letterSpacing: 4,
     },
 
     containerInput: {
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         backgroundColor: "#ededed",
         borderRadius: 50,
-        borderWidth: 2
+        borderWidth: 2,
     },
     textEsqueci: {
         fontWeight: "bold",
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         fontSize: 20,
-        color: "#ffffff"
+        color: "#ffffff",
     },
     cadastreLabel: {
         alignItems: "center",
@@ -126,4 +127,4 @@ const styles = StyleSheet.create({
         letterSpacing: 1,
         textDecorationLine: "underline",
     },
-})
+});
