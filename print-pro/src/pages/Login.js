@@ -45,7 +45,11 @@ export default function Login() {
 
 const styles = StyleSheet.create({
     all: {
-        width: "100%",
+        flex: 1,
+        width: "auto",
+        height:'auto',
+        alignItems: "center",
+        justifyContent: "center",
         backgroundColor: "#b4c1d9",
     },
     titleContainer: {
@@ -64,32 +68,30 @@ const styles = StyleSheet.create({
     },
 
     containerInput: {
-        width: "100%",
-        height: "100%",
-        alignItems: "center",
+        width: "60%",
+        height: "70%",
+        justifyContent:'center',
         bottom: 0,
         backgroundColor: "white",
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
+        borderRadius: 15,
     },
     containerForm: {
-        width: "100%",
-        height: "auto",
         marginTop: 25,
-        padding: 10,
+        paddingLeft: 80,
+        paddingRight: 80,
     },
     textInput: {
-        fontSize: 20,
+        fontSize: 15,
+        alignItems: 'flex-start',
         fontWeight: "bold",
-        paddingLeft: 20,
+        paddingLeft: 5,
         paddingBottom: 5,
-        letterSpacing: 2,
     },
     labelInput: {
-        width: "100%",
         paddingLeft: 20,
         backgroundColor: "#ededed",
-        borderRadius: 50,
+        alignItems:'flex-start',
+        borderRadius: 5,
         borderWidth: 2,
     },
     textEsqueci: {
@@ -100,11 +102,10 @@ const styles = StyleSheet.create({
         textDecorationLine: "underline",
     },
     button: {
-        borderRadius: 50,
-        alignItems: "center",
-        justifyContent: "center",
-        width: "100%",
-        backgroundColor: "#000000",
+        borderRadius: 20,
+        alignItems: 'center',
+        justifyContent:'center',
+        backgroundColor: '#009688',
         paddingTop: 14,
         paddingBottom: 14,
     },

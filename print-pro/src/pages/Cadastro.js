@@ -20,7 +20,7 @@ export default function Cadastro() {
 
   return (
     <View style={styles.container}>
-      <Text>
+      <Text style={styles.Text}>
         Cadastro
       </Text>
       <TextInput
@@ -57,33 +57,41 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#D9D9D9',
   },
   input: {
     width: '80%',
-    height: 50,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    marginBottom: 20,
-    paddingHorizontal: 10,
+    height: 40,
+    backgroundColor: 'white',
+    borderRadius: 8,
+    marginBottom: 16,
+    paddingHorizontal: 12,
   },
   button: {
-    backgroundColor: '#000',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 5,
-    marginTop: 20,
+    backgroundColor: '#009688',
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    marginBottom: 16,
   },
   buttonText: {
     color: 'white',
-    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 16,
   },
   backButton: {
-    marginTop: 10,
-    padding: 10,
+    marginBottom: 16,
   },
   backButtonText: {
-    color: 'blue',
-    textDecorationLine: 'underline',
+    color: '#333', // Dark grey color
+    textAlign: 'center',
+    fontSize: 14,
   },
+  Text:{
+    color: "black",
+    fontSize: 32,
+    fontWeight: "bold",
+    letterSpacing: 4,
+    padding: 30,
+  }
 });
