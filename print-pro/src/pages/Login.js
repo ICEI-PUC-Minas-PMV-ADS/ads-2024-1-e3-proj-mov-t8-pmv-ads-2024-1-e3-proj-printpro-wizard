@@ -28,8 +28,6 @@ export default function Login( {user} ) {
     });
     }
 
-    
-
     return (
         <View style={styles.all}>
             <View style={styles.titleContainer}>

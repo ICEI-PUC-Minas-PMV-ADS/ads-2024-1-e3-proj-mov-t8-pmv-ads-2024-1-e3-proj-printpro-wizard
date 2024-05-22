@@ -21,7 +21,7 @@ export default function Cadastro() {
 
   const handleCadastro = () => {
     const emailValue = email.slice(email.indexOf("@") + 1)
-    const emailDomain = ["gmail.com", "hotmail.com"]
+    const emailDomain = ["gmail.com", "hotmail.com", "outlook.com", "proton.com"]
 
     if (password !== password2) {
       setText("As senhas devem ser iguais!")
