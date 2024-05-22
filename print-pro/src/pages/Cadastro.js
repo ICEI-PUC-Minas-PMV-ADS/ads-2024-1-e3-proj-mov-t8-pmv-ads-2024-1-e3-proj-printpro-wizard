@@ -1,34 +1,59 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../services/fireBaseConfig";
 
 export default function Cadastro() {
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const navigation = useNavigation();
 
-  const handleCadastro = () => {
-    console.log('Nome:', nome);
-    console.log('Email:', email);
-    console.log('Senha:', senha);
-  };
+  const navigation = useNavigation();
 
   const handleBackToLogin = () => {
     navigation.navigate('Login');
   };
+  
+  const [user, setUser] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [password2, setPassword2] = useState();
+  const [text, setText] = useState("")
+  // const [name ,setName] = useState();
+
+  const handleCadastro = () => {
+    const emailValue = email.slice(email.indexOf("@") + 1)
+    const emailDomain = ["gmail.com", "hotmail.com"]
+
+    if (password !== password2) {
+      setText("As senhas devem ser iguais!")
+    }
+    else if (emailDomain.includes(emailValue) == false) {
+      setText("Por favor digite um email válido!")
+    }
+    else {
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        setUser(user);
+        navigation.navigate('Login');
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+    }
+  }
 
   return (
     <View style={styles.container}>
       <Text style={styles.Text}>
         Cadastro
       </Text>
-      <TextInput
+      {/* <TextInput
         style={styles.input}
         placeholder="Nome"
-        value={nome}
-        onChangeText={text => setNome(text)}
-      />
+        value={name}
+        onChangeText={text => setName(text)}
+      /> */}
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -39,9 +64,20 @@ export default function Cadastro() {
         style={styles.input}
         placeholder="Senha"
         secureTextEntry={true}
-        value={senha}
-        onChangeText={text => setSenha(text)}
+        value={password}
+        onChangeText={text => setPassword(text)}
       />
+
+      <TextInput
+        style={styles.input}
+        placeholder="Senha novamente"
+        secureTextEntry={true}
+        value={password2}
+        onChangeText={text => setPassword2(text)}
+        />
+
+      <Text style={styles.red}>{text}</Text>
+
       <TouchableOpacity style={styles.button} onPress={handleCadastro}>
         <Text style={styles.buttonText}>Cadastrar</Text>
       </TouchableOpacity>
@@ -73,6 +109,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 24,
     marginBottom: 16,
+    marginTop: 7,
   },
   buttonText: {
     color: 'white',
@@ -93,5 +130,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     letterSpacing: 4,
     padding: 30,
-  }
+  },
+  red: {
+    color: "red",
+  },
 });

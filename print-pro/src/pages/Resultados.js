@@ -10,9 +10,7 @@ const Resultados = () => {
       <Footer/>
 
     </View>
-
-  );
-}
+)};
 
 const styles = StyleSheet.create({
   container: {

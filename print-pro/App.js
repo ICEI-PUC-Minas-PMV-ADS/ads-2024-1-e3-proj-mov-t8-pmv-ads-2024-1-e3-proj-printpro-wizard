@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Footer from './src/pages/Footer/index';
@@ -13,6 +13,7 @@ import Cadastro from "./src/pages/Cadastro";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
@@ -25,5 +26,9 @@ export default function App() {
         <Stack.Screen name="Orcamento" component={Orcamento} options={{headerBackVisible: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
-  );
+  )
+
+
+
+    
 }

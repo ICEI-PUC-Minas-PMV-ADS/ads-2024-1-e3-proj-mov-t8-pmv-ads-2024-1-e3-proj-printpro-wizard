@@ -1,15 +1,34 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../services/fireBaseConfig";
 
-export default function Login() {
-    const [email, onChangeEmail] = useState("");
-    const [Password, onChangePassword] = useState("");
+
+
+export default function Login( {user} ) {  
     const navigation = useNavigation();
 
     const handleCadastroNavigation = () => {
         navigation.navigate('Cadastro');
     };
+
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+
+    const handleLogin = () => {
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => { 
+        const user = userCredential.user;
+        navigation.navigate('Resultados');
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+    });
+    }
+
+    
 
     return (
         <View style={styles.all}>
@@ -18,16 +37,20 @@ export default function Login() {
             </View>
 
             <View style={styles.containerInput}>
+
                 <View style={styles.containerForm}>
                     <Text style={styles.textInput}>EMAIL</Text>
-                    <TextInput style={styles.labelInput} keyboardType="default" onChangeText={onChangeEmail} value={email} styles={styles.input} />
+                    <TextInput style={styles.labelInput} keyboardType="default" 
+                    onChangeText={text => setEmail(text)} value={email}  />
 
                     <Text style={styles.textInput}>SENHA</Text>
-                    <TextInput style={styles.labelInput} keyboardType="default" onChangeText={onChangePassword} value={Password} styles={styles.input} secureTextEntry={true} />
+                    <TextInput style={styles.labelInput} keyboardType="default" 
+                    onChangeText={text => setPassword(text)} value={password}
+                    secureTextEntry={true} />
 
                     <Text style={styles.textEsqueci}>ESQUECI MINHA SENHA</Text>
 
-                    <TouchableOpacity style={styles.button} onPress={() => console.log("Login pressed")}>
+                    <TouchableOpacity style={styles.button} onPress={handleLogin}>
                         <Text style={styles.buttonText}>ENTRAR</Text>
                     </TouchableOpacity>
                 </View>
@@ -68,8 +91,8 @@ const styles = StyleSheet.create({
     },
 
     containerInput: {
-        width: "60%",
-        height: "70%",
+        width: "90%",
+        height: "50%",
         justifyContent:'center',
         bottom: 0,
         backgroundColor: "white",
@@ -88,7 +111,8 @@ const styles = StyleSheet.create({
         paddingBottom: 5,
     },
     labelInput: {
-        paddingLeft: 20,
+        paddingLeft: 5,
+        paddingRight: 5,
         backgroundColor: "#ededed",
         alignItems:'flex-start',
         borderRadius: 5,
