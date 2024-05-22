@@ -5,7 +5,7 @@ import Footer from './Footer/index';
 const  CalcDetalhado = () => {
   return (
     <View style={styles.container}> 
-      <Text style={styles.text}>Calculo Detalhado</Text>
+      <Text style={styles.text}>Calculo Detalhado 1</Text>
       <Footer />
     </View>
 
