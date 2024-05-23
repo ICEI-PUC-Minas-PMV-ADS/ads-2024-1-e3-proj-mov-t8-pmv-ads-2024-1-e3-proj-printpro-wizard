@@ -53,14 +53,14 @@ const styles = StyleSheet.create({
   },
   boxContainer: {
     width: '90%',
-    marginBottom: 20, // Adds space between the label and next box container
+    marginBottom: 20,
     alignItems: 'center'
   },
   labelText: {
     fontSize: 18,
     fontWeight: 'bold',
     color: 'black',
-    marginBottom: 5 // Adds space between label and box
+    marginBottom: 5 
   },
   box: {
     width: '100%',
