@@ -18,12 +18,12 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
-        <Stack.Screen name="Cadastro" component={Cadastro} options={{headerBackVisible: false, headerShown: false}}/>
-        <Stack.Screen name="Custo" component={Custo} options={{headerBackVisible: false, headerShown: false}}/>
-        <Stack.Screen name="Resultados" component={Resultados} options={{headerBackVisible: false}}/>
-        <Stack.Screen name="CalcDetalhado" component={CalcDetalhado} options={{headerBackVisible: false}}/>
-        <Stack.Screen name="PagRetorno" component={PagRetorno} options={{headerBackVisible: false}}/>
-        <Stack.Screen name="Orcamento" component={Orcamento} options={{headerBackVisible: false}}/>
+        <Stack.Screen name="Cadastro" component={Cadastro} options={{headerShown: false}}/>
+        <Stack.Screen name="Custo" component={Custo} options={{headerShown: false}}/>
+        <Stack.Screen name="Resultados" component={Resultados} options={{headerShown: false}}/>
+        <Stack.Screen name="CalcDetalhado" component={CalcDetalhado} options={{headerShown: false}}/>
+        <Stack.Screen name="PagRetorno" component={PagRetorno} options={{headerShown: false}}/>
+        <Stack.Screen name="Orcamento" component={Orcamento} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

@@ -30,19 +30,19 @@ export default function Footer(props) {
     return (
         <View style={styles.footerContainer}>
             <TouchableOpacity onPress={goToResultsPage}>
-                <Image source={require("./CalcDetalhado.png")}/>
+                <Image source={require("./Resultado.png")}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={goToCalcDetailPage}>
                 <Image source={require("./CalcDetalhado.png")}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={goToProductionCostPage}>
-                <Image source={require("./CalcDetalhado.png")}/>
+                <Image source={require("./CustoProducao.png")}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={goToInvestmentReturnPage}>
-                <Image source={require("./CalcDetalhado.png")}/>
+                <Image source={require("./RetornoInvestimento.png")}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={goToProfilePage}>
-                <Image source={require("./CalcDetalhado.png")}/>
+                <Image source={require("./Orcamento.png")}/>
             </TouchableOpacity>
         </View>
     );

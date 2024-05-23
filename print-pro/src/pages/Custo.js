@@ -2,36 +2,37 @@ import React from "react";
 import { View, Text, StyleSheet, TextInput } from 'react-native';
 import Footer from './Footer/index';
 
-const Custo = () => {
+export default function Custo() {
 
-  const [resource, onChangeResource] = React.useState('');
-  const [energy, onChangeEnergy] = React.useState('');
-  const [maintenance, onChangeMaintenance] = React.useState('');
-  const [fails, onChangeFails] = React.useState('');
-  const [finishing, onChangeFinishing] = React.useState('');
-  const [fixation, onChangeFixation] = React.useState('');
+  const [resource, setResource] = React.useState();
+  const [energy, setEnergy] = React.useState();
+  const [maintenance, setMaintenance] = React.useState();
+  const [fails, setFails] = React.useState();
+  const [finishing, setFinishing] = React.useState();
+  const [fixation, setFixation] = React.useState();
   
   return (
     <View style={styles.container}>
+
       <View style={styles.textContainer}>
+
         <Text style={styles.text}>Custo Material</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeResource} value={resource} style={styles.input}/>
+        <TextInput keyboardType="numeric" onChangeText={setResource} value={resource} style={styles.input}/>
 
         <Text style={styles.text}>Custo Energia</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeEnergy} value={energy} style={styles.input}/>
+        <TextInput keyboardType="numeric" onChangeText={setEnergy} value={energy} style={styles.input}/>
 
         <Text style={styles.text}>Custo Manutenção</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeMaintenance} value={maintenance} style={styles.input}/>
+        <TextInput keyboardType="numeric" onChangeText={setMaintenance} value={maintenance} style={styles.input}/>
 
         <Text style={styles.text}>Custo de Falhas</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeFails} value={fails} style={styles.input}/>
+        <TextInput keyboardType="numeric" onChangeText={setFails} value={fails} style={styles.input}/>
 
         <Text style={styles.text}>Custo de Acabamento</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeFinishing} value={finishing} style={styles.input}/>
+        <TextInput keyboardType="numeric" onChangeText={setFinishing} value={finishing} style={styles.input}/>
 
         <Text style={styles.text}>Custo de Fixação (spray)</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeFixation} value={fixation} style={styles.input}/>
-
+        <TextInput keyboardType="numeric" onChangeText={setFixation} value={fixation} style={styles.input}/>
       </View>
 
       <Footer />
@@ -69,5 +70,3 @@ const styles = StyleSheet.create({
   },
 
 });
-
-export default Custo;
