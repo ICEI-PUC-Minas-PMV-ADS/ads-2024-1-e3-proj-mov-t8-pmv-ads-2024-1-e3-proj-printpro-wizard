@@ -1,12 +1,41 @@
 import React from "react";
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TextInput } from 'react-native';
 import Footer from './Footer/index';
 
-const  CalcDetalhado = () => {
+const CalcDetalhado = () => {
+
+  const [resource, onChangeResource] = React.useState('');
+  const [energy, onChangeEnergy] = React.useState('');
+  const [maintenance, onChangeMaintenance] = React.useState('');
+  const [fails, onChangeFails] = React.useState('');
+  const [finishing, onChangeFinishing] = React.useState('');
+  const [fixation, onChangeFixation] = React.useState('');
+
   return (
-    <View style={styles.container}> 
-      <Text style={styles.text}>Calculo Detalhado 1</Text>
+    <View style={styles.container}>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>Tipo Do Filamento</Text>
+        <TextInput keyboardType="default" onChangeText={onChangeResource} value={resource} style={styles.input}/>
+
+        <Text style={styles.text}>Valor do Kg</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeEnergy} value={energy} style={styles.input}/>
+
+        <Text style={styles.text}>Preço por kWh</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeMaintenance} value={maintenance} style={styles.input}/>
+
+        <Text style={styles.text}>Consumo da Impressora</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeFails} value={fails} style={styles.input}/>
+
+        <Text style={styles.text}>Depreciação por Hora</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeFinishing} value={finishing} style={styles.input}/>
+
+        <Text style={styles.text}>Média de falhas</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeFixation} value={fixation} style={styles.input}/>
+
+      </View>
+
       <Footer />
+
     </View>
 
   );
@@ -14,24 +43,34 @@ const  CalcDetalhado = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    backgroundColor: 'white'
+    backgroundColor: "white",
+    display: "flex",
+    justifyContent: "space-between",
+    height: "100%",
+    width: "100%",
   },
+
+  textContainer: {
+    display: "flex",
+    alignItems: "center",
+    marginTop: 25
+  },
+
   text: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    backgroundColor: '#ADD8E6',
-    padding: 20,
-    width: '100%',
-    color: 'white',
-    outline: 'black',
-    textAlign: 'center',
-    textShadowColor: 'rgba(0,0,0, 0.75)',
-    textShadowOffset: { width: -1, height: 1},
-    textShadowRadius: 5
-  }
+    fontSize: 20,
+  },
+
+  input: {
+    backgroundColor: "#88abbb",
+    width: '90%',
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    color: "white",
+    textAlign: "center"
+  },
+
 });
 
 export default CalcDetalhado;
