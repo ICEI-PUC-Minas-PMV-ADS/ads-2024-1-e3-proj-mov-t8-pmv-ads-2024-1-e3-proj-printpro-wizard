@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../services/fireBaseConfig";
 
 
@@ -12,6 +12,10 @@ export default function Login( {user} ) {
     const handleCadastroNavigation = () => {
         navigation.navigate('Cadastro');
     };
+
+    const handleResetPassword = () => {
+        navigation.navigate('EsqueciSenha');
+    }
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -46,7 +50,10 @@ export default function Login( {user} ) {
                     onChangeText={text => setPassword(text)} value={password}
                     secureTextEntry={true} />
 
-                    <Text style={styles.textEsqueci}>ESQUECI MINHA SENHA</Text>
+                    <TouchableOpacity onPress={handleResetPassword}>
+                        <Text style={styles.textEsqueci}>ESQUECI MINHA SENHA</Text>
+                    </TouchableOpacity>
+                    
 
                     <TouchableOpacity style={styles.button} onPress={handleLogin}>
                         <Text style={styles.buttonText}>ENTRAR</Text>
