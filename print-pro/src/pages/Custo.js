@@ -1,31 +1,56 @@
-import React from "react";
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import React, { useState } from "react";
+import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import Footer from './Footer/index';
 
 export default function Custo() {
 
-  const [resource, setResource] = React.useState();
-  const [energy, setEnergy] = React.useState();
-  const [maintenance, setMaintenance] = React.useState();
-  const [fails, setFails] = React.useState();
-  const [finishing, setFinishing] = React.useState();
-  const [fixation, setFixation] = React.useState();
+  const [resource, setResource] = useState()
+  const [calResource, setCalResource] = useState()
 
-/* Custo do Material: Valor do material / 1000 * peso estimado(g) 
-exemplo: (150/1000) * 120 = $ 18,00 */
+  const [energy, setEnergy] = useState()
 
-/* Custo de Energia: Definido pelo usuário */
+  const [maintenance, setMaintenance] = useState()
+  const [calMaintenance, setCalMaintenance] = useState()
 
-/* Custo de Manutenção: custo do material * 0,15 
-exemplo: 18 * 0,15 = $2,70 */
+  const [fails, setFails] = useState()
+  const [calFails, setCalFails] = useState()
 
-/* Custo de Falhas: custo de material * media de falhas
-exemplo 18 * 0,1 = $1,8 */
+  const [finishing, setFinishing] = useState()
+  const [calFinishing, setCalFinishing] = useState()
 
-/* Custo do Acabamento (15%): custo de material * 15%
-exemplo 18 * 0,15 = $2,70 */
+  const [fixation, setFixation] = useState()
 
-/* Custo de Fixação (spray): Definido pelo usuário */
+  const [text, setText] = useState()
+
+  function Calcular() {
+
+    const resourceValue = parseFloat(resource)
+    const maintenanceValue = parseFloat(maintenance)
+    const failsValue = parseFloat(fails)
+    const finishingValue = parseFloat(finishing)
+
+    if (!isNaN(resourceValue) ) {
+      setCalResource((resourceValue / 1000) * 120);
+      console.log(calResource)
+    } 
+
+    if (!isNaN(maintenanceValue) ) {
+      setCalMaintenance(maintenanceValue * 0,15);
+      console.log(calMaintenance)
+    } 
+  
+    if (!isNaN(failsValue) ) {
+      setCalFails(failsValue * 0,1);
+      console.log(calFails)
+    } 
+  
+    if (!isNaN(finishingValue) ) {
+      setCalFinishing(finishingValue * 0,15);
+      console.log(calFinishing)
+    } 
+
+    setText("Valor adicionado! Vá para aba Resultados!")
+  }
   
   return (
     <View style={styles.container}>
@@ -33,28 +58,39 @@ exemplo 18 * 0,15 = $2,70 */
       <View style={styles.textContainer}>
 
         <Text style={styles.text}>Custo Material</Text> 
-        <TextInput keyboardType="numeric" onChangeText={setResource} value={resource} style={styles.input}/>
+        <TextInput style={styles.input} keyboardType="numeric" onChangeText={text => setResource(text)} 
+        inputMode="numeric" maxLength={20}/>
 
         <Text style={styles.text}>Custo Energia</Text>
-        <TextInput keyboardType="numeric" onChangeText={setEnergy} value={energy} style={styles.input}/>
+        <TextInput keyboardType="numeric" onChangeText={text => setEnergy(text)} value={energy} style={styles.input}
+        inputMode="numeric" maxLength={20}/>
 
         <Text style={styles.text}>Custo Manutenção</Text>
-        <TextInput keyboardType="numeric" onChangeText={setMaintenance} value={maintenance} style={styles.input}/>
+        <TextInput keyboardType="numeric" onChangeText={text => setMaintenance(text)} value={maintenance} style={styles.input}
+        inputMode="numeric" maxLength={20}/>
 
         <Text style={styles.text}>Custo de Falhas</Text>
-        <TextInput keyboardType="numeric" onChangeText={setFails} value={fails} style={styles.input}/>
+        <TextInput keyboardType="numeric" onChangeText={text => setFails(text)} value={fails} style={styles.input}
+        inputMode="numeric" maxLength={20}/>
 
         <Text style={styles.text}>Custo de Acabamento</Text>
-        <TextInput keyboardType="numeric" onChangeText={setFinishing} value={finishing} style={styles.input}/>
+        <TextInput keyboardType="numeric" onChangeText={text => setFinishing(text)} value={finishing} style={styles.input}
+        inputMode="numeric" maxLength={20}/>
 
         <Text style={styles.text}>Custo de Fixação (spray)</Text>
-        <TextInput keyboardType="numeric" onChangeText={setFixation} value={fixation} style={styles.input}/>
+        <TextInput keyboardType="numeric" onChangeText={text => setFixation(text)} value={fixation} style={styles.input}
+        inputMode="numeric" maxLength={20}/>
+        
+        <Text style={styles.red}>{text}</Text>
+
+        <TouchableOpacity onPress={Calcular}>
+          <Text style={styles.textCadastroClick}>CALCULAR CUSTOS</Text>
+        </TouchableOpacity>
       </View>
 
-      <Footer />
+      {/* <Footer /> */}
 
     </View>
-
   );
 }
 
@@ -66,17 +102,14 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
   },
-
   textContainer: {
     display: "flex",
     alignItems: "center",
     marginTop: 25
   },
-
   text: {
     fontSize: 20,
   },
-
   input: {
     width: '90%',
     height: 40,
@@ -84,5 +117,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
   },
-
+  red: {
+    color: "red",
+  },
 });

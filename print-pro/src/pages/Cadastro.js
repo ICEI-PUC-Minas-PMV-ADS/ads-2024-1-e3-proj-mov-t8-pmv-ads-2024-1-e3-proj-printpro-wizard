@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../services/fireBaseConfig";
+import {app,auth, db, collection, addDoc} from "../services/fireBaseConfig";
 
 export default function Cadastro() {
 
@@ -19,9 +19,22 @@ export default function Cadastro() {
   const [text, setText] = useState("")
   // const [name ,setName] = useState();
 
+
+
   const handleCadastro = () => {
     const emailValue = email.slice(email.indexOf("@") + 1)
     const emailDomain = ["gmail.com", "hotmail.com", "outlook.com", "proton.com"]
+
+    async function addEmail() {
+      try {
+        const docRef = await addDoc(collection(db, "emails"), {
+          email: email
+        });
+        console.log("Document written with ID: ", docRef.id);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+    }
 
     if (password !== password2) {
       setText("As senhas devem ser iguais!")
@@ -34,6 +47,7 @@ export default function Cadastro() {
       .then((userCredential) => {
         const user = userCredential.user;
         setUser(user);
+        addEmail();
         navigation.navigate('Login');
       })
       .catch((error) => {
