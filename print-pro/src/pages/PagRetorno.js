@@ -1,48 +1,96 @@
-import React from "react";
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useState } from "react";
+import { View, Text, TextInput, StyleSheet, Button, ScrollView } from 'react-native';
+import Footer from './Footer/index';
 
 const PagRetorno = () => {
-  const results = [
-    { label: "Investmento A", value: calculateInvestmentA() },
-    { label: "Investmento B", value: calculateInvestmentB() },
-    { label: "Investmento C", value: calculateInvestmentC() },
-    { label: "Investmento D", value: calculateInvestmentD() },
-    { label: "Investmento E", value: calculateInvestmentE() },
-  ];
+  const [investmentA, setInvestmentA] = useState("");
+  const [investmentB, setInvestmentB] = useState("");
+  const [investmentC, setInvestmentC] = useState("");
+  const [investmentD, setInvestmentD] = useState("");
+  const [result, setResult] = useState(null);
+
+  const calculateResult = () => {
+    const a = parseFloat(investmentA) || 0;
+    const b = parseFloat(investmentB) || 0;
+    const c = parseFloat(investmentC) || 0;
+    const d = parseFloat(investmentD) || 0;
+    const calculatedResult = "R$" + (a / (b * c * d)).toFixed(2);
+    setResult(calculatedResult);
+  };
 
   return (
-    <View style={styles.container}> 
-      <Text style={styles.headerText}>Retorno de Investimento</Text>
-      {results.map((result, index) => (
-        <View key={index} style={styles.boxContainer}>
-          <Text style={styles.labelText}>{result.label}</Text>
-          <View style={styles.box}>
-            <Text style={styles.boxText}>{result.value}</Text>
-          </View>
+    <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <Text style={styles.headerText}>Retorno de Investimento</Text>
+        
+        <View style={styles.boxContainer}>
+          <Text style={styles.labelText}>Valor da maquina</Text>
+          <TextInput
+            style={styles.input}
+            value={investmentA}
+            onChangeText={setInvestmentA}
+            keyboardType="numeric"
+          />
         </View>
-      ))}
+        
+        <View style={styles.boxContainer}>
+          <Text style={styles.labelText}>Horas por dia</Text>
+          <TextInput
+            style={styles.input}
+            value={investmentB}
+            onChangeText={setInvestmentB}
+            keyboardType="numeric"
+          />
+        </View>
+        
+        <View style={styles.boxContainer}>
+          <Text style={styles.labelText}>Dias por mês</Text>
+          <TextInput
+            style={styles.input}
+            value={investmentC}
+            onChangeText={setInvestmentC}
+            keyboardType="numeric"
+          />
+        </View>
+        
+        <View style={styles.boxContainer}>
+          <Text style={styles.labelText}>Tempo desejado (mês)</Text>
+          <TextInput
+            style={styles.input}
+            value={investmentD}
+            onChangeText={setInvestmentD}
+            keyboardType="numeric"
+          />
+        </View>
+        
+        <Button title="Resultado" onPress={calculateResult} color='#88ABBB'/>
+        
+        {result !== null && (
+          <View style={styles.resultBox}>
+            <Text style={styles.resultText}>Resultado: {result}</Text>
+          </View>
+        )}
+      </ScrollView>
+      <Footer />
     </View>
   );
 };
 
-const calculateInvestmentA = () => 400 * 0.15;
-const calculateInvestmentB = () => 200 * 0.25;
-const calculateInvestmentC = () => 300 * 1.1;
-const calculateInvestmentD = () => 400 * 1.5;
-const calculateInvestmentE = () => 500 / 2.0;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
     backgroundColor: 'white',
+  },
+  scrollContainer: {
+    flexGrow: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
   headerText: {
     fontSize: 30,
     fontWeight: 'bold',
     backgroundColor: '#487082',
-    padding: 20,
+    padding: 40,
     width: '100%',
     color: 'white',
     textAlign: 'center',
@@ -54,7 +102,7 @@ const styles = StyleSheet.create({
   boxContainer: {
     width: '90%',
     marginBottom: 20,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   labelText: {
     fontSize: 18,
@@ -62,20 +110,30 @@ const styles = StyleSheet.create({
     color: 'black',
     marginBottom: 5 
   },
-  box: {
+  input: {
     width: '100%',
     padding: 10,
+    margin: 10,
     backgroundColor: '#88ABBB',
-    borderColor: '#88ABBB',
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 5,
+  },
+  resultBox: {
+    width: '50%',
+    padding: 15,
+    backgroundColor: '#487082',
+    borderColor: '#487082',
     borderWidth: 2,
     borderRadius: 5,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 20,
   },
-  boxText: {
+  resultText: {
     fontSize: 19,
     fontWeight: 'bold',
-    color: 'black'
-  }
+    color: 'black',
+  },
 });
 
 export default PagRetorno;
