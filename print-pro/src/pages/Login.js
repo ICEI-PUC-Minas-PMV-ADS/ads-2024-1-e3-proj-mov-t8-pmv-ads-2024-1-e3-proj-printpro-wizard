@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../services/fireBaseConfig";
+import {app, auth, db, collection, addDoc, doc, setDoc, getDoc, query, where} from "../services/fireBaseConfig";
 
 
 
@@ -17,10 +17,21 @@ export default function Login( {user} ) {
         navigation.navigate('EsqueciSenha');
     }
 
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
+    const [text, setText] = useState()
 
-    const handleLogin = () => {
+    async function handleLogin() {
+        const emailRef = doc(db, "emails", email);
+        const emailSnap = await getDoc(emailRef);
+
+        if (emailSnap.exists()) {
+            {}
+        }
+        else {
+            setText("Email ou senha incorreto!")
+        }
+
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => { 
         const user = userCredential.user;
@@ -49,11 +60,12 @@ export default function Login( {user} ) {
                     <TextInput style={styles.labelInput} keyboardType="default" 
                     onChangeText={text => setPassword(text)} value={password}
                     secureTextEntry={true} />
+                        
+                    <Text style={styles.messageError}>{text}</Text>
 
                     <TouchableOpacity onPress={handleResetPassword}>
                         <Text style={styles.textEsqueci}>ESQUECI MINHA SENHA</Text>
                     </TouchableOpacity>
-                    
 
                     <TouchableOpacity style={styles.button} onPress={handleLogin}>
                         <Text style={styles.buttonText}>ENTRAR</Text>
@@ -97,7 +109,7 @@ const styles = StyleSheet.create({
 
     containerInput: {
         width: "90%",
-        height: "50%",
+        height: "70%",
         justifyContent:'center',
         bottom: 0,
         backgroundColor: "white",
@@ -157,4 +169,11 @@ const styles = StyleSheet.create({
         letterSpacing: 1,
         textDecorationLine: "underline",
     },
+    messageError: {
+        color: 'red',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: "auto",
+        marginTop: 10
+    }
 });

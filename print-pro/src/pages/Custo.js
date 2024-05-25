@@ -1,55 +1,73 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import {app, auth, db, collection, addDoc, doc, setDoc, getDoc, query, where} from "../services/fireBaseConfig";
 import Footer from './Footer/index';
 
 export default function Custo() {
 
-  const [resource, setResource] = useState()
-  const [calResource, setCalResource] = useState()
+  const [resource, setResource] = useState('')
+  const [calResource, setCalResource] = useState('')
 
-  const [energy, setEnergy] = useState()
+  const [energy, setEnergy] = useState('')
 
-  const [maintenance, setMaintenance] = useState()
-  const [calMaintenance, setCalMaintenance] = useState()
+  const [maintenance, setMaintenance] = useState('')
+  const [calMaintenance, setCalMaintenance] = useState('')
 
-  const [fails, setFails] = useState()
-  const [calFails, setCalFails] = useState()
+  const [fails, setFails] = useState('')
+  const [calFails, setCalFails] = useState('')
 
-  const [finishing, setFinishing] = useState()
-  const [calFinishing, setCalFinishing] = useState()
+  const [finishing, setFinishing] = useState('')
+  const [calFinishing, setCalFinishing] = useState('')
 
-  const [fixation, setFixation] = useState()
+  const [fixation, setFixation] = useState('')
 
-  const [text, setText] = useState()
+  const [text, setText] = useState('')
+
+  async function addResults() {
+    let day = new Date().getDate()
+    let month = new Date().getMonth() + 1
+    let year = new Date().getFullYear()
+    let hours = new Date().getHours()
+    let min = new Date().getMinutes()
+    let sec = new Date().getSeconds()
+    let date = `${year}/${month}/${day} - ${hours}:${min}:${sec}`
+
+    try {
+      await setDoc(doc(db, "costResults", `${date}`), {
+        energy: energy,
+        maintenance: calMaintenance,
+        fails: calFails,
+        finishing: calFinishing,
+        fixation: fixation,
+      });
+      setText("Valor adicionado! Vá para aba Resultados!")
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
+  }
 
   function Calcular() {
 
-    const resourceValue = parseFloat(resource)
-    const maintenanceValue = parseFloat(maintenance)
-    const failsValue = parseFloat(fails)
-    const finishingValue = parseFloat(finishing)
+    const resourceValue = parseFloat(resource) || 0
+    const energyValue = parseFloat(energy) || 0
+    const maintenanceValue = parseFloat(maintenance) || 0
+    const failsValue = parseFloat(fails) || 0
+    const finishingValue = parseFloat(finishing) || 0 
+    const fixationValue = parseFloat(fixation) || 0
 
-    if (!isNaN(resourceValue) ) {
-      setCalResource((resourceValue / 1000) * 120);
-      console.log(calResource)
-    } 
+    setCalResource((resourceValue / 1000) * 120);
+    console.log(calResource)
 
-    if (!isNaN(maintenanceValue) ) {
-      setCalMaintenance(maintenanceValue * 0,15);
-      console.log(calMaintenance)
-    } 
-  
-    if (!isNaN(failsValue) ) {
-      setCalFails(failsValue * 0,1);
-      console.log(calFails)
-    } 
-  
-    if (!isNaN(finishingValue) ) {
-      setCalFinishing(finishingValue * 0,15);
-      console.log(calFinishing)
-    } 
+    setCalMaintenance(maintenanceValue * 0.15);
+    console.log(calMaintenance)
 
-    setText("Valor adicionado! Vá para aba Resultados!")
+    setCalFails(failsValue * 0.1);
+    console.log(calFails)
+
+    setCalFinishing(finishingValue * 0.15);
+    console.log(calFinishing)
+
+    addResults()
   }
   
   return (
@@ -62,23 +80,23 @@ export default function Custo() {
         inputMode="numeric" maxLength={20}/>
 
         <Text style={styles.text}>Custo Energia</Text>
-        <TextInput keyboardType="numeric" onChangeText={text => setEnergy(text)} value={energy} style={styles.input}
+        <TextInput style={styles.input} keyboardType="numeric" onChangeText={text => setEnergy(text)} value={energy} 
         inputMode="numeric" maxLength={20}/>
 
         <Text style={styles.text}>Custo Manutenção</Text>
-        <TextInput keyboardType="numeric" onChangeText={text => setMaintenance(text)} value={maintenance} style={styles.input}
+        <TextInput style={styles.input} keyboardType="numeric" onChangeText={text => setMaintenance(text)} value={maintenance} 
         inputMode="numeric" maxLength={20}/>
 
         <Text style={styles.text}>Custo de Falhas</Text>
-        <TextInput keyboardType="numeric" onChangeText={text => setFails(text)} value={fails} style={styles.input}
+        <TextInput style={styles.input} keyboardType="numeric" onChangeText={text => setFails(text)} value={fails} 
         inputMode="numeric" maxLength={20}/>
 
         <Text style={styles.text}>Custo de Acabamento</Text>
-        <TextInput keyboardType="numeric" onChangeText={text => setFinishing(text)} value={finishing} style={styles.input}
+        <TextInput style={styles.input} keyboardType="numeric" onChangeText={text => setFinishing(text)} value={finishing} 
         inputMode="numeric" maxLength={20}/>
 
         <Text style={styles.text}>Custo de Fixação (spray)</Text>
-        <TextInput keyboardType="numeric" onChangeText={text => setFixation(text)} value={fixation} style={styles.input}
+        <TextInput style={styles.input} keyboardType="numeric" onChangeText={text => setFixation(text)} value={fixation} 
         inputMode="numeric" maxLength={20}/>
         
         <Text style={styles.red}>{text}</Text>
@@ -88,7 +106,7 @@ export default function Custo() {
         </TouchableOpacity>
       </View>
 
-      {/* <Footer /> */}
+      <Footer />
 
     </View>
   );

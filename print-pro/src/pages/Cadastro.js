@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import {app,auth, db, collection, addDoc} from "../services/fireBaseConfig";
+import {app, auth, db, collection, addDoc, doc, setDoc, getDoc, query, where} from "../services/fireBaseConfig";
+
 
 export default function Cadastro() {
 
@@ -17,30 +18,39 @@ export default function Cadastro() {
   const [password, setPassword] = useState();
   const [password2, setPassword2] = useState();
   const [text, setText] = useState("")
-  // const [name ,setName] = useState();
+  const [name ,setName] = useState();
 
 
-
-  const handleCadastro = () => {
+  async function handleCadastro() {
     const emailValue = email.slice(email.indexOf("@") + 1)
-    const emailDomain = ["gmail.com", "hotmail.com", "outlook.com", "proton.com"]
+
+    const emailRef = doc(db, "emails", email);
+    const emailSnap = await getDoc(emailRef);
+    
+    if (emailSnap.exists()) {
+      setText("Este email já esta cadastrado")
+      return
+    }
+
+    const emailDomainRef = doc(db, "emailDomain",emailValue)
+    const emailDomianSnap = await getDoc(emailDomainRef)
+
+    if (emailDomianSnap.exists()) {
+      {}
+    } else {
+      setText("Digite um email válido!")
+      return
+    }
 
     async function addEmail() {
-      try {
-        const docRef = await addDoc(collection(db, "emails"), {
-          email: email
-        });
-        console.log("Document written with ID: ", docRef.id);
-      } catch (e) {
-        console.error("Error adding document: ", e);
-      }
+      await setDoc(doc(db, "emails", email), {
+        name: name,
+        email: email,
+      });
     }
 
     if (password !== password2) {
       setText("As senhas devem ser iguais!")
-    }
-    else if (emailDomain.includes(emailValue) == false) {
-      setText("Por favor digite um email válido!")
     }
     else {
       createUserWithEmailAndPassword(auth, email, password)
@@ -62,12 +72,12 @@ export default function Cadastro() {
       <Text style={styles.Text}>
         Cadastro
       </Text>
-      {/* <TextInput
+      <TextInput
         style={styles.input}
         placeholder="Nome"
         value={name}
         onChangeText={text => setName(text)}
-      /> */}
+      />
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -101,6 +111,7 @@ export default function Cadastro() {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -148,4 +159,4 @@ const styles = StyleSheet.create({
   red: {
     color: "red",
   },
-});
+})
