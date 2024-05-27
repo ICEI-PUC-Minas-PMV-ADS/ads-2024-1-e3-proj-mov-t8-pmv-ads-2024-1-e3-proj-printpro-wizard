@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, StyleSheet, Button, ScrollView } from 'react-native';
 import Footer from './Footer/index';
+import { useNavigation } from '@react-navigation/native';
 
 const PagRetorno = () => {
   const [investmentA, setInvestmentA] = useState("");
   const [investmentB, setInvestmentB] = useState("");
   const [investmentC, setInvestmentC] = useState("");
   const [investmentD, setInvestmentD] = useState("");
-  const [result, setResult] = useState(null);
+  const navigation = useNavigation();
 
   const calculateResult = () => {
     const a = parseFloat(investmentA) || 0;
     const b = parseFloat(investmentB) || 0;
     const c = parseFloat(investmentC) || 0;
     const d = parseFloat(investmentD) || 0;
-    const calculatedResult = "R$" + (a / (b * c * d)).toFixed(2);
-    setResult(calculatedResult);
+    const calculatedResult = (a / (b * c * d)).toFixed(2);
+    navigation.navigate('Resultados', { roiResult: calculatedResult });
   };
 
   return (
@@ -64,12 +65,6 @@ const PagRetorno = () => {
         </View>
         
         <Button title="Resultado" onPress={calculateResult} color='#88ABBB'/>
-        
-        {result !== null && (
-          <View style={styles.resultBox}>
-            <Text style={styles.resultText}>Resultado: {result}</Text>
-          </View>
-        )}
       </ScrollView>
       <Footer />
     </View>

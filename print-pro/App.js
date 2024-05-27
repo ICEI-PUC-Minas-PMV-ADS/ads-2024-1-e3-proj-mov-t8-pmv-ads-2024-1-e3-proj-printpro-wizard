@@ -5,7 +5,7 @@ import Footer from './src/pages/Footer/index';
 import Resultados from './src/pages/Resultados';
 import PagRetorno from './src/pages/PagRetorno';
 import CalcDetalhado from './src/pages/CalcDetalhado';
-import Orcamento from './src/pages/Orcamento';
+import Orçamento from './src/pages/Orcamento';
 import Custo from './src/pages/Custo';
 import Login from "./src/pages/Login";
 import Cadastro from "./src/pages/Cadastro";
@@ -25,7 +25,7 @@ export default function App() {
          <Stack.Screen name="Resultados" component={Resultados} options={{headerShown: false}}/>
          <Stack.Screen name="CalcDetalhado" component={CalcDetalhado} options={{headerShown: false}}/>
          <Stack.Screen name="PagRetorno" component={PagRetorno} options={{headerShown: false}}/>
-         <Stack.Screen name="Orcamento" component={Orcamento} options={{headerShown: false}}/>
+         <Stack.Screen name="Orcamento" component={Orçamento} options={{headerShown: false}}/>
        </Stack.Navigator>
      </NavigationContainer>
   );
