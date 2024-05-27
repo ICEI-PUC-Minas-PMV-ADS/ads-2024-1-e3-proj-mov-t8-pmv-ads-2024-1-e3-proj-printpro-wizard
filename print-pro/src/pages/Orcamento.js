@@ -1,23 +1,81 @@
-import React from "react";
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useState } from "react";
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Modal, FlatList } from 'react-native';
 import Footer from './Footer/index';
 
+const Orçamento = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [horas, setHoras] = useState('00');
+  const [minutos, setMinutos] = useState('00');
+  const [pesoEstimado, setPesoEstimado] = useState('');
 
-const Orcamento = () => {
+  const horasArray = Array.from({ length: 24 }, (_, i) => ('0' + i).slice(-2));
+  const minutosArray = Array.from({ length: 60 }, (_, i) => ('0' + i).slice(-2));
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
+  const handleHoraSelect = (hora) => {
+    setHoras(hora);
+    toggleModal();
+  };
+
+  const handleMinutoSelect = (minuto) => {
+    setMinutos(minuto);
+    toggleModal();
+  };
+
   return (
     <View style={styles.container}> 
-      <Text style={styles.text}>Orcamento</Text>
-      <Text style={styles.time}>Tempo estimado: 9h 28m</Text>
-      <Text style={styles.weight}>Peso estimado: 120g</Text>
-      <View style={{marginTop:70}}>
-        <Text style={styles.sale}>Valor de Venda</Text>
-        <View style={styles.saleView}>
-          <Text style={styles.sale}>R$ 85,53</Text>
-        </View>
+      <Text style={styles.text}>Orçamento</Text>
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Tempo estimado:</Text>
+        <TouchableOpacity style={styles.timeButton} onPress={toggleModal}>
+          <Text>{horas}:{minutos}</Text>
+        </TouchableOpacity>
+        <Modal
+          visible={showModal}
+          animationType="slide"
+          transparent={true}
+        >
+          <View style={styles.modalContainer}>
+            <View style={styles.modalContent}>
+              <FlatList
+                data={horasArray}
+                renderItem={({ item }) => (
+                  <TouchableOpacity onPress={() => handleHoraSelect(item)}>
+                    <Text style={styles.modalItem}>{item}</Text>
+                  </TouchableOpacity>
+                )}
+                keyExtractor={(item) => item}
+                ListHeaderComponent={<Text style={styles.modalHeader}>Horas</Text>}
+              />
+              <FlatList
+                data={minutosArray}
+                renderItem={({ item }) => (
+                  <TouchableOpacity onPress={() => handleMinutoSelect(item)}>
+                    <Text style={styles.modalItem}>{item}</Text>
+                  </TouchableOpacity>
+                )}
+                keyExtractor={(item) => item}
+                ListHeaderComponent={<Text style={styles.modalHeader}>Minutos</Text>}
+              />
+            </View>
+          </View>
+        </Modal>
+      </View>
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Peso estimado (g):</Text>
+        <TextInput
+          style={styles.input}
+          value={pesoEstimado}
+          onChangeText={setPesoEstimado}
+          placeholder="Peso estimado"
+          keyboardType="numeric"
+        />
       </View>
       <Footer/>
     </View>
-
   );
 }
 
@@ -27,7 +85,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     backgroundColor: 'white',
-
   },
   text: {
     fontSize: 30,
@@ -36,30 +93,56 @@ const styles = StyleSheet.create({
     padding: 20,
     width: '100%',
     color: 'white',
-    outline: 'black',
     textAlign: 'center',
-    textShadowColor: 'rgba(0,0,0, 0.75)',
+    textShadowColor: 'rgba(0,0,0,0.75)',
     textShadowOffset: { width: -1, height: 1},
     textShadowRadius: 5
   },
-  time: {
-    paddingTop:200,
-    fontSize:25
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 10,
   },
-  weight:{
-    fontSize:25
+  label: {
+    fontSize: 20,
+    marginRight: 10,
   },
-  sale:{
-    fontSize:25,
-    textAlign:"center"
+  timeButton: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
   },
-  saleView:{
-    backgroundColor:'lightgreen',
-    padding:10,
-    paddingLeft:40,
-    paddingRight:40,
-    marginTop:5
-  }
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+  },
+  modalHeader: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  modalItem: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    fontSize: 20,
+    width: 150,
+  },
 });
 
-export default Orcamento;
+export default Orçamento;

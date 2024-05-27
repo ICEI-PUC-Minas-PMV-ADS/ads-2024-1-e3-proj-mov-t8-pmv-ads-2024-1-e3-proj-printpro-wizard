@@ -25,7 +25,7 @@ export default function App() {
          <Stack.Screen name="Resultados" component={Resultados} options={{headerShown: false}}/>
          <Stack.Screen name="CalcDetalhado" component={CalcDetalhado} options={{headerShown: false}}/>
          <Stack.Screen name="PagRetorno" component={PagRetorno} options={{headerShown: false}}/>
-         <Stack.Screen name="Orcamento" component={Orçamento} options={{headerShown: false}}/>
+         <Stack.Screen name="Orçamento" component={Orçamento} options={{headerShown: false}}/>
        </Stack.Navigator>
      </NavigationContainer>
   );
