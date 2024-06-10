@@ -1,18 +1,18 @@
-### 08. Plano de Testes de Software
+## 08. Plano de Testes de Software
 
 
 
-#### Plano de Testes de Software
+## Plano de Testes de Software
 
 
 
-##### Introdução
+## Introdução
 
 O Plano de Testes de Software descreve a estratégia e os procedimentos para testar as funcionalidades da aplicação "print-pro". Este documento garante que todas as funcionalidades sejam testadas de forma sistemática e completa, garantindo a qualidade e confiabilidade do software.
 
 
 
-##### Objetivos
+## Objetivos
 
 - Validar que todas as funcionalidades implementadas estão funcionando conforme especificado.
 
@@ -22,13 +22,13 @@ O Plano de Testes de Software descreve a estratégia e os procedimentos para tes
 
 
 
-##### Escopo
+## Escopo
 
 Os testes cobrirão todas as funcionalidades principais da aplicação, incluindo cálculo de custos, orçamento, e retorno sobre o investimento.
 
 
 
-##### Estratégia de Testes
+## Estratégia de Testes
 
 - **Testes Unitários**: Testar individualmente cada módulo ou componente da aplicação usando Jest.
 
@@ -40,17 +40,13 @@ Os testes cobrirão todas as funcionalidades principais da aplicação, incluind
 
 
 
-##### Ferramentas de Teste
+## Ferramentas de Teste
 
 - **Expo Go**: Utilizado para testar a aplicação em dispositivos móveis durante o desenvolvimento.
 
-- **React Native Testing Library**: Ferramenta para escrever testes de interface do usuário em React Native.
-
-- **Jest**: Usado para testes unitários e de integração.
 
 
-
-##### Casos de Teste
+## Casos de Teste
 
 1. **Cálculo de Custos**
 
@@ -100,22 +96,11 @@ Os testes cobrirão todas as funcionalidades principais da aplicação, incluind
 
 
 
-##### Cronograma
+## Cronograma
 
-| Atividade        | Data de Início | Data de Término |
-
-|-------------------------|----------------|-----------------|
-
-| Preparação do Ambiente | 10/06/2024   | 12/06/2024   |
-
-| Execução de Testes   | 13/06/2024   | 20/06/2024   |
-
-| Registro de Defeitos  | 21/06/2024   | 25/06/2024   |
-
-| Testes de Regressão   | 26/06/2024   | 30/06/2024   |
-
-
-
----
-
-
+ | Atividade | Data de Início |Data de Término                 |
+|--------------------|------------------------------------|----------------------------------------|
+|Preparação do Ambiente | 10/06/2024 | 12/06/2024 |
+|Execução de Testes | 13/06/2024 | 20/06/2024 |
+|Registro de Defeitos | 21/06/2024 | 25/06/2024 |
+|Testes de Regressão | 26/06/2024 | 30/06/2024 |
