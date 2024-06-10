@@ -1,12 +1,27 @@
-# Registro de Testes de Software
+## 09. Registro de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>, <a href="8-Plano de Testes de Software.md"> Plano de Testes de Software</a>
 
-Relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado em um plano de testes pré-definido.
+## Introdução
 
-## Avaliação
+O Registro de Testes de Software documenta os resultados dos testes executados, incluindo os defeitos encontrados, a severidade dos defeitos e as ações corretivas tomadas.
 
-Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
 
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
+
+## Resultados dos Testes
+
+| Caso de Teste | Resultado | Defeito Encontrado | Severidade | Ação Corretiva | Status|
+|------------------------|-----------|--------------------|------------|----------------|---------|
+| Cálculo de Custos | Aprovado | N/A | N/A | N/A | Concluído |
+| Geração de Orçamento | Falhou  | Erro de cálculo | Alta | Corrigir código | Em andamento |
+| Retorno sobre Investimento | Aprovado | N/A | N/A    | N/A | Concluído |
+
+
+
+
+
+## Defeitos Encontrados
+
+| ID do Defeito | Descrição      | Severidade | Status    | Data de Registro | Responsável |
+|---------------|----------------------|------------|--------------|------------------|-------------|
+| DEF-001    | Erro de cálculo no orçamento | Alta    | Em andamento | 15/06/2024    | Davidson |
+
