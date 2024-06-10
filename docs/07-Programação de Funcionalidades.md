@@ -45,40 +45,7 @@ A aplicação "print-pro" é desenvolvida utilizando React Native e Expo Go. A e
      ```
    - **Explicação**: Este componente React Native utiliza hooks para gerenciar o estado dos inputs e calcular o custo de impressão com base nos valores inseridos.
 
-2. **Geração de Orçamento**
-   - **Descrição**: Permite aos usuários gerar um orçamento detalhado para um pedido de impressão, incluindo todos os custos e impostos.
-   - **Código-Fonte**:
-     ```javascript
-     import React, { useState } from 'react';
-     import { View, Text, Button } from 'react-native';
-     import { gerarOrcamento } from '../services/orcamentoService';
-
-     const GeracaoDeOrcamento = () => {
-       const [orcamento, setOrcamento] = useState(null);
-
-       const handleGerarOrcamento = async () => {
-         const novoOrcamento = await gerarOrcamento();
-         setOrcamento(novoOrcamento);
-       };
-
-       return (
-         <View>
-           <Button title="Gerar Orçamento" onPress={handleGerarOrcamento} />
-           {orcamento && (
-             <View>
-               <Text>Orçamento:</Text>
-               <Text>{orcamento.total}</Text>
-             </View>
-           )}
-         </View>
-       );
-     };
-
-     export default GeracaoDeOrcamento;
-     ```
-   - **Explicação**: Este componente chama um serviço externo para gerar o orçamento e atualiza o estado da aplicação com o valor retornado.
-
-3. **Cálculo de Retorno sobre Investimento (ROI)**
+2. **Cálculo de Retorno sobre Investimento (ROI)**
    - **Descrição**: Esta funcionalidade permite aos usuários calcular o retorno sobre o investimento para diferentes cenários de impressão.
    - **Código-Fonte**:
      ```javascript
@@ -111,5 +78,5 @@ A aplicação "print-pro" é desenvolvida utilizando React Native e Expo Go. A e
      ```
    - **Explicação**: Este componente permite ao usuário inserir valores de investimento e retorno, calculando e exibindo o ROI com base nesses valores.
 
-## Conclusão
+#### Conclusão
 O documento de Programação de Funcionalidades detalha as principais funcionalidades implementadas na aplicação "print-pro". Cada componente é desenvolvido com foco na modularidade e reutilização, facilitando a manutenção e expansão futura do sistema. A utilização de Expo Go e React Native permite um desenvolvimento ágil e eficiente para plataformas móveis.
