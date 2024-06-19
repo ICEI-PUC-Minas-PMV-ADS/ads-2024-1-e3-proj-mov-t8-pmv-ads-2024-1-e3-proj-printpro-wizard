@@ -1,7 +1,3 @@
-## 08. Plano de Testes de Software
-
-
-
 ## Plano de Testes de Software
 
 
