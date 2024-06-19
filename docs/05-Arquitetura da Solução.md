@@ -4,13 +4,13 @@ Especificação Técnica Completa
 Introdução
 A especificação técnica do projeto "print-pro" descreve os requisitos técnicos, a arquitetura do sistema, as tecnologias utilizadas e as integrações necessárias para o desenvolvimento da aplicação. Este documento serve como guia para os desenvolvedores e a equipe de infraestrutura, garantindo que todos os aspectos técnicos sejam considerados durante o desenvolvimento e a implantação do sistema.
 
-*Requisitos Técnicos:*
-#### Hardware 
+#### Requisitos Técnicos:
+*Hardware:*
 
 * Dispositivos de Desenvolvimento: Computadores com no mínimo 8GB de RAM, processador quad-core, e 100GB de espaço em disco.
 * Dispositivos de Teste: Smartphones e tablets com Android (versão 6.0 ou superior) e iOS (versão 11.0 ou superior).
 
-#### Software:
+*Software:*
 * Sistema Operacional: Windows 10, macOS 10.15 ou superior, Linux (distribuições Ubuntu, Fedora, etc.).
 * IDE/Editor de Código: Visual Studio Code, Android Studio.
 * Versionamento de Código: Git e repositório GitHub.
