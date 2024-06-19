@@ -17,7 +17,7 @@ const CalcDetalhado = () => {
         <Text style={styles.text}>Tipo Do Filamento</Text>
         <TextInput keyboardType="default" onChangeText={onChangeResource} value={resource} style={styles.input}/>
 
-        <Text style={styles.text}>Valor do Kg</Text>
+        <Text style={styles.text}>Valor do Kilo</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeEnergy} value={energy} style={styles.input}/>
 
         <Text style={styles.text}>Preço por kWh</Text>
