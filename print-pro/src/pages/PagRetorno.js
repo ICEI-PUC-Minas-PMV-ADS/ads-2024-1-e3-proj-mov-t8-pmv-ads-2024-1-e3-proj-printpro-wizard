@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TextInput, StyleSheet, Button, ScrollView } from 'react-native';
 import Footer from './Footer/index';
 import { useNavigation } from '@react-navigation/native';
+import { db, setDoc, doc } from '../services/fireBaseConfig';
 
 const PagRetorno = () => {
   const [investmentA, setInvestmentA] = useState("");
@@ -10,13 +11,23 @@ const PagRetorno = () => {
   const [investmentD, setInvestmentD] = useState("");
   const navigation = useNavigation();
 
-  const calculateResult = () => {
+  const calculateResult = async () => {
     const a = parseFloat(investmentA) || 0;
     const b = parseFloat(investmentB) || 0;
     const c = parseFloat(investmentC) || 0;
     const d = parseFloat(investmentD) || 0;
     const calculatedResult = (a / (b * c * d)).toFixed(2);
-    navigation.navigate('Resultados', { roiResult: calculatedResult });
+
+    // Save to Firestore
+    try {
+      await setDoc(doc(db, "roiResults", "latestResult"), {
+        roi: calculatedResult,
+      });
+      console.log("ROI result saved successfully");
+      navigation.navigate('Resultados', { roiResult: calculatedResult });
+    } catch (error) {
+      console.error("Error saving ROI result: ", error);
+    }
   };
 
   return (
