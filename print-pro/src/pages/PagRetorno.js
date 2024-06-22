@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TextInput, StyleSheet, Button, ScrollView } from 'react-native';
 import Footer from './Footer/index';
 import { useNavigation } from '@react-navigation/native';
-import { db, setDoc, doc } from '../services/fireBaseConfig';
+import { db, setDoc, doc } from '../services/fireBaseConfig'; 
 
 const PagRetorno = () => {
   const [investmentA, setInvestmentA] = useState("");
@@ -18,7 +18,7 @@ const PagRetorno = () => {
     const d = parseFloat(investmentD) || 0;
     const calculatedResult = (a / (b * c * d)).toFixed(2);
 
-    // Save to Firestore
+
     try {
       await setDoc(doc(db, "roiResults", "latestResult"), {
         roi: calculatedResult,
