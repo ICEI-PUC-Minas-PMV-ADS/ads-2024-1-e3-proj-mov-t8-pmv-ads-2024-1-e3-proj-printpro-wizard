@@ -1,4 +1,4 @@
-## 09. Registro de Testes de Software
+## Registro de Testes de Software
 
 
 ## Introdução
