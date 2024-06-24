@@ -9,11 +9,23 @@ const Resultados = () => {
 
   const [percentage, setPercentage] = useState('');
   const [finalValue, setFinalValue] = useState(totalCost);
+  const [estimatedTime, setEstimatedTime] = useState('');
+  const [estimatedWeight, setEstimatedWeight] = useState('');
 
   const handleCalculateFinalValue = () => {
     const percentageValue = parseFloat(percentage) || 0;
     const addedValue = (percentageValue / 100) * totalCost;
-    setFinalValue(totalCost + addedValue);
+    let newValue = totalCost + addedValue;
+
+    // Adicionar tempo estimado em horas
+    const timeValue = parseFloat(estimatedTime) || 0;
+    newValue += timeValue * 10; // Exemplo de cálculo baseado no tempo (aqui multiplicado por 10, pode ser ajustado conforme necessidade)
+
+    // Adicionar peso estimado em gramas
+    const weightValue = parseFloat(estimatedWeight) || 0;
+    newValue += weightValue * 0.05; // Exemplo de cálculo baseado no peso (aqui multiplicado por 0.05, pode ser ajustado conforme necessidade)
+
+    setFinalValue(newValue);
   };
 
   return (
@@ -35,6 +47,26 @@ const Resultados = () => {
             keyboardType="numeric"
             value={percentage}
             onChangeText={setPercentage}
+          />
+        </View>
+
+        <View style={styles.boxContainer}>
+          <Text style={styles.labelText}>Tempo Estimado (horas)</Text>
+          <TextInput
+            style={styles.input}
+            keyboardType="numeric"
+            value={estimatedTime}
+            onChangeText={setEstimatedTime}
+          />
+        </View>
+
+        <View style={styles.boxContainer}>
+          <Text style={styles.labelText}>Peso Estimado (gramas)</Text>
+          <TextInput
+            style={styles.input}
+            keyboardType="numeric"
+            value={estimatedWeight}
+            onChangeText={setEstimatedWeight}
           />
         </View>
 
@@ -100,7 +132,7 @@ const styles = StyleSheet.create({
   resultText: {
     fontSize: 19,
     fontWeight: 'bold',
-    color: 'black',
+    color: 'white',
   },
   input: {
     width: '100%',
