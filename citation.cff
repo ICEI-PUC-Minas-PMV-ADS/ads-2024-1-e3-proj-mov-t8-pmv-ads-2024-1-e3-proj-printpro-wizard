@@ -1,0 +1,24 @@
+message: Please cite this software using these metadata.
+title: PrintPRO Wizard
+authors:
+  - family-names: Pereira dos Santos Filho
+    given-names: César
+  - family-names: Romero Magalhaes
+    given-names: Caique
+  - family-names: Emanuel Batista de Pádua
+    given-names: Márcio 
+  - family-names: Ribeiro Amaral
+    given-names: William 
+  - family-names: de Paiva Marques
+    given-names: Davidson 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: de Macêdo Neto
+    given-names: Cristiano 
+keywords:
+  - Impressora 3D
+  - Calculos
+  - Usuários
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/ads-2024-1-e3-proj-mov-t8-pmv-ads-2024-1-e3-proj-printpro-wizard
+version: 1.0.0
+date-released: 2024-06-23
