@@ -73,6 +73,8 @@ export default function Custo() {
   return (
     <View style={styles.container}>
 
+    <Text style={styles.headerText}>Resultados</Text>
+
       <View style={styles.textContainer}>
 
         <Text style={styles.text}>Custo Material</Text> 
@@ -102,7 +104,7 @@ export default function Custo() {
         <Text style={styles.red}>{text}</Text>
 
         <TouchableOpacity onPress={Calcular}>
-          <Text style={styles.textCadastroClick}>CALCULAR CUSTOS</Text>
+          <Text style={styles.textButton}>CALCULAR CUSTOS</Text>
         </TouchableOpacity>
       </View>
 
@@ -120,20 +122,48 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
   },
+  headerText: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    backgroundColor: '#487082',
+    padding: 40,
+    width: '100%',
+    color: 'white',
+    textAlign: 'center',
+    textShadowColor: 'rgba(0,0,0, 0.75)',
+    textShadowOffset: { width: -1, height: 1},
+    textShadowRadius: 5,
+    marginBottom: 20
+  },
   textContainer: {
     display: "flex",
     alignItems: "center",
     marginTop: 25
   },
   text: {
-    fontSize: 20,
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'black',
+    marginBottom: 5 
   },
   input: {
-    width: '90%',
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
+    width: '80%',
     padding: 10,
+    margin: 10,
+    backgroundColor: '#88ABBB',
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 5,
+  },
+  textButton: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'black',
+    marginBottom: 5,
+    backgroundColor: '#88ABBB',
+    padding: 10,
+    borderWidth: 1,
+    borderRadius: 5,
   },
   red: {
     color: "red",
