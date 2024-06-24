@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    justifyContent: 'space-between', // Ensures Footer stays at the bottom
+    justifyContent: 'space-between',
   },
   text: {
     fontSize: 30,
