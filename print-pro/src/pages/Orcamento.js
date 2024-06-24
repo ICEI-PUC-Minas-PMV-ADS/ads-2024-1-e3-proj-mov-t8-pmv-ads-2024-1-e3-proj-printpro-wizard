@@ -28,51 +28,53 @@ const Orçamento = () => {
   return (
     <View style={styles.container}> 
       <Text style={styles.text}>Orçamento</Text>
-      <View style={styles.inputContainer}>
-        <Text style={styles.label}>Tempo estimado:</Text>
-        <TouchableOpacity style={styles.timeButton} onPress={toggleModal}>
-          <Text>{horas}:{minutos}</Text>
-        </TouchableOpacity>
-        <Modal
-          visible={showModal}
-          animationType="slide"
-          transparent={true}
-        >
-          <View style={styles.modalContainer}>
-            <View style={styles.modalContent}>
-              <FlatList
-                data={horasArray}
-                renderItem={({ item }) => (
-                  <TouchableOpacity onPress={() => handleHoraSelect(item)}>
-                    <Text style={styles.modalItem}>{item}</Text>
-                  </TouchableOpacity>
-                )}
-                keyExtractor={(item) => item}
-                ListHeaderComponent={<Text style={styles.modalHeader}>Horas</Text>}
-              />
-              <FlatList
-                data={minutosArray}
-                renderItem={({ item }) => (
-                  <TouchableOpacity onPress={() => handleMinutoSelect(item)}>
-                    <Text style={styles.modalItem}>{item}</Text>
-                  </TouchableOpacity>
-                )}
-                keyExtractor={(item) => item}
-                ListHeaderComponent={<Text style={styles.modalHeader}>Minutos</Text>}
-              />
+      <View style={styles.content}>
+        <View style={styles.inputContainer}>
+          <Text style={styles.label}>Tempo estimado:</Text>
+          <TouchableOpacity style={styles.timeButton} onPress={toggleModal}>
+            <Text>{horas}:{minutos}</Text>
+          </TouchableOpacity>
+          <Modal
+            visible={showModal}
+            animationType="slide"
+            transparent={true}
+          >
+            <View style={styles.modalContainer}>
+              <View style={styles.modalContent}>
+                <FlatList
+                  data={horasArray}
+                  renderItem={({ item }) => (
+                    <TouchableOpacity onPress={() => handleHoraSelect(item)}>
+                      <Text style={styles.modalItem}>{item}</Text>
+                    </TouchableOpacity>
+                  )}
+                  keyExtractor={(item) => item}
+                  ListHeaderComponent={<Text style={styles.modalHeader}>Horas</Text>}
+                />
+                <FlatList
+                  data={minutosArray}
+                  renderItem={({ item }) => (
+                    <TouchableOpacity onPress={() => handleMinutoSelect(item)}>
+                      <Text style={styles.modalItem}>{item}</Text>
+                    </TouchableOpacity>
+                  )}
+                  keyExtractor={(item) => item}
+                  ListHeaderComponent={<Text style={styles.modalHeader}>Minutos</Text>}
+                />
+              </View>
             </View>
-          </View>
-        </Modal>
-      </View>
-      <View style={styles.inputContainer}>
-        <Text style={styles.label}>Peso estimado (g):</Text>
-        <TextInput
-          style={styles.input}
-          value={pesoEstimado}
-          onChangeText={setPesoEstimado}
-          placeholder="Peso estimado"
-          keyboardType="numeric"
-        />
+          </Modal>
+        </View>
+        <View style={styles.inputContainer}>
+          <Text style={styles.label}>Peso estimado (g):</Text>
+          <TextInput
+            style={styles.input}
+            value={pesoEstimado}
+            onChangeText={setPesoEstimado}
+            placeholder="Peso estimado"
+            keyboardType="numeric"
+          />
+        </View>
       </View>
       <Footer/>
     </View>
@@ -82,14 +84,14 @@ const Orçamento = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
     backgroundColor: 'white',
+    justifyContent: 'space-between', // Ensures Footer stays at the bottom
   },
   text: {
     fontSize: 30,
     fontWeight: 'bold',
-    backgroundColor: '#ADD8E6',
+    backgroundColor: '#487082',
+    marginTop: 20,
     padding: 20,
     width: '100%',
     color: 'white',
@@ -97,6 +99,11 @@ const styles = StyleSheet.create({
     textShadowColor: 'rgba(0,0,0,0.75)',
     textShadowOffset: { width: -1, height: 1},
     textShadowRadius: 5
+  },
+  content: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   inputContainer: {
     flexDirection: 'row',
@@ -125,16 +132,12 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 10,
   },
-  modalHeader: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
   modalItem: {
     fontSize: 18,
     marginBottom: 10,
   },
   input: {
+    backgroundColor: '#88ABBB',
     borderWidth: 1,
     borderColor: 'gray',
     borderRadius: 5,
