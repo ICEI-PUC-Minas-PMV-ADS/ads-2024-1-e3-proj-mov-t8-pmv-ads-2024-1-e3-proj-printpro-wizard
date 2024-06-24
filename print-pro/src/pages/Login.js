@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import {app, auth, db, collection, addDoc, doc, setDoc, getDoc, query, where} from "../services/fireBaseConfig";
+import { app, auth, db, doc, getDoc } from "../services/fireBaseConfig";
 
-
-
-export default function Login( {user} ) {  
+export default function Login() {  
     const navigation = useNavigation();
 
     const handleCadastroNavigation = () => {
@@ -17,31 +15,29 @@ export default function Login( {user} ) {
         navigation.navigate('EsqueciSenha');
     }
 
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
-    const [text, setText] = useState()
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [text, setText] = useState('');
 
     async function handleLogin() {
-        const emailRef = doc(db, "emails", email);
-        const emailSnap = await getDoc(emailRef);
+        try {
 
-        if (emailSnap.exists()) {
-            {}
-        }
-        else {
-            setText("Email ou senha incorreto!")
-        }
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            console.log('User signed in successfully:', user);
 
-        signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => { 
-        const user = userCredential.user;
-        navigation.navigate('Resultados');
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-    });
+            navigation.navigate('Resultados');
+        } catch (error) {
+
+            if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+                setText("Email ou senha incorreto!");
+            } else {
+                setText("Ocorreu um erro ao fazer login. Por favor, tente novamente.");
+            }
+            console.error('Login error:', error);
+        }
     }
+    
 
     return (
         <View style={styles.all}>
