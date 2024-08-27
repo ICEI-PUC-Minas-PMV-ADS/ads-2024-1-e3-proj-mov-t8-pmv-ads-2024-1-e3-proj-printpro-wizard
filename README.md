@@ -18,7 +18,7 @@ Um aplicativo móvel que visa simplificar o cálculo de custos e lucros na impre
 
 ## Orientador
 
-* Cristiano de Macêdo Neto
+* Pedro Felipe Alves de Oliveira
 
 ## Instruções de utilização
 
